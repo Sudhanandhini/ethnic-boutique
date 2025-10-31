@@ -41,19 +41,19 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+91 98765 43210", "+91 98765 43211"],
-      link: "tel:+919876543210"
+      details: ["+91 98869 87278"],
+      link: "tel:+919886987278"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["info@ethnicboutique.com", "support@ethnicboutique.com"],
-      link: "mailto:info@ethnicboutique.com"
+      details: ["sandysethnic@gmail.com"],
+      link: "mailto:sandysethnic@gmail.com"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Address",
-      details: ["123 Fashion Street", "Mumbai, Maharashtra 400001"],
+      details: ["#120, 14th Main, 29th Cross, Jayanagar, 4th Block, Bangalore, India"],
       link: null
     },
     {
@@ -293,7 +293,7 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -346,7 +346,7 @@ const Contact = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

@@ -10,78 +10,78 @@ const Collection = () => {
       title: 'Western Collection',
       description: 'Modern and stylish western ethnic fusion wear that blends contemporary fashion with traditional elements.',
       items: [
-        { id: 1, name: 'Indo-Western Gown', price: '₹8,999', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' },
-        { id: 2, name: 'Fusion Dress', price: '₹6,499', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' },
-        { id: 3, name: 'Designer Jumpsuit', price: '₹7,999', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop' },
-        { id: 4, name: 'Contemporary Suit', price: '₹9,499', image: 'https://images.unsplash.com/photo-1596385193050-d11c9f08e5fc?w=600&auto=format&fit=crop' }
+        { id: 1, name: 'Indo-Western Gown',  image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' },
+        { id: 2, name: 'Fusion Dress', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' },
+        { id: 3, name: 'Designer Jumpsuit', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop' },
+        { id: 4, name: 'Contemporary Suit', image: 'https://images.unsplash.com/photo-1596385193050-d11c9f08e5fc?w=600&auto=format&fit=crop' }
       ]
     },
     'indo-western': {
       title: 'Indo-Western Collection',
       description: 'Perfect blend of Indian tradition and western silhouettes for the modern woman.',
       items: [
-        { id: 1, name: 'Jacket Style Lehenga', price: '₹12,999', image: 'https://images.unsplash.com/photo-1596385193050-d11c9f08e5fc?w=600&auto=format&fit=crop' },
-        { id: 2, name: 'Cape Dress', price: '₹9,999', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' },
-        { id: 3, name: 'Dhoti Pants Set', price: '₹8,499', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' },
-        { id: 4, name: 'Fusion Saree', price: '₹11,499', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop' }
+        { id: 1, name: 'Jacket Style Lehenga', image: 'https://images.unsplash.com/photo-1596385193050-d11c9f08e5fc?w=600&auto=format&fit=crop' },
+        { id: 2, name: 'Cape Dress', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' },
+        { id: 3, name: 'Dhoti Pants Set', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' },
+        { id: 4, name: 'Fusion Saree', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop' }
       ]
     },
     'bridal-blouse': {
       title: 'Bridal Blouse Collection',
       description: 'Exquisitely designed bridal blouses with intricate embroidery and embellishments for your special day.',
       items: [
-        { id: 1, name: 'Heavy Work Blouse', price: '₹4,999', image: 'https://images.unsplash.com/photo-1617627143956-3c9ac17c2e01?w=600&auto=format&fit=crop' },
-        { id: 2, name: 'Aari Work Blouse', price: '₹5,499', image: 'https://images.unsplash.com/photo-1617627143627-0d2a3f61e007?w=600&auto=format&fit=crop' },
-        { id: 3, name: 'Maggam Work Blouse', price: '₹6,999', image: 'https://images.unsplash.com/photo-1622290799326-f3a6c83b7d95?w=600&auto=format&fit=crop' },
-        { id: 4, name: 'Designer Blouse', price: '₹4,499', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' }
+        { id: 1, name: 'Heavy Work Blouse', image: 'https://images.unsplash.com/photo-1617627143956-3c9ac17c2e01?w=600&auto=format&fit=crop' },
+        { id: 2, name: 'Aari Work Blouse', image: 'https://images.unsplash.com/photo-1617627143627-0d2a3f61e007?w=600&auto=format&fit=crop' },
+        { id: 3, name: 'Maggam Work Blouse', image: 'https://images.unsplash.com/photo-1622290799326-f3a6c83b7d95?w=600&auto=format&fit=crop' },
+        { id: 4, name: 'Designer Blouse', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' }
       ]
     },
     'salwar': {
       title: 'Salwar Collection',
       description: 'Elegant and comfortable salwar suits perfect for every occasion from casual to festive.',
       items: [
-        { id: 1, name: 'Anarkali Suit', price: '₹7,999', image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop' },
-        { id: 2, name: 'Punjabi Suit', price: '₹6,499', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop' },
-        { id: 3, name: 'Palazzo Suit', price: '₹5,999', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' },
-        { id: 4, name: 'Churidar Suit', price: '₹6,999', image: 'https://images.unsplash.com/photo-1596385193050-d11c9f08e5fc?w=600&auto=format&fit=crop' }
+        { id: 1, name: 'Anarkali Suit', image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop' },
+        { id: 2, name: 'Punjabi Suit', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop' },
+        { id: 3, name: 'Palazzo Suit', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' },
+        { id: 4, name: 'Churidar Suit', image: 'https://images.unsplash.com/photo-1596385193050-d11c9f08e5fc?w=600&auto=format&fit=crop' }
       ]
     },
     'kids': {
       title: 'Kids Collection',
       description: 'Adorable ethnic wear for your little ones, designed with comfort and style in mind.',
       items: [
-        { id: 1, name: 'Kids Lehenga', price: '₹3,999', image: 'https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=600&auto=format&fit=crop' },
-        { id: 2, name: 'Kids Kurta Set', price: '₹2,499', image: 'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=600&auto=format&fit=crop' },
-        { id: 3, name: 'Kids Anarkali', price: '₹3,499', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' },
-        { id: 4, name: 'Kids Pavada', price: '₹2,999', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' }
+        { id: 1, name: 'Kids Lehenga', image: 'https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=600&auto=format&fit=crop' },
+        { id: 2, name: 'Kids Kurta Set', image: 'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=600&auto=format&fit=crop' },
+        { id: 3, name: 'Kids Anarkali', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' },
+        { id: 4, name: 'Kids Pavada', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' }
       ]
     },
     'lehenga': {
       title: 'Lehenga Collection',
       description: 'Stunning lehengas for weddings, festivals, and celebrations, adorned with beautiful embellishments.',
       items: [
-        { id: 1, name: 'Bridal Lehenga', price: '₹24,999', image: 'https://images.unsplash.com/photo-1596385193050-d11c9f08e5fc?w=600&auto=format&fit=crop' },
-        { id: 2, name: 'Party Lehenga', price: '₹15,999', image: 'https://images.unsplash.com/photo-1595777216528-071e0127ccbf?w=600&auto=format&fit=crop' },
-        { id: 3, name: 'Festive Lehenga', price: '₹18,999', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' },
-        { id: 4, name: 'Designer Lehenga', price: '₹22,999', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' }
+        { id: 1, name: 'Bridal Lehenga', image: 'https://images.unsplash.com/photo-1596385193050-d11c9f08e5fc?w=600&auto=format&fit=crop' },
+        { id: 2, name: 'Party Lehenga', image: 'https://images.unsplash.com/photo-1595777216528-071e0127ccbf?w=600&auto=format&fit=crop' },
+        { id: 3, name: 'Festive Lehenga', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' },
+        { id: 4, name: 'Designer Lehenga', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' }
       ]
     },
     'pattu-pavada': {
       title: 'Pattu Pavada Collection',
       description: 'Traditional South Indian silk pavadas for young girls, perfect for festivals and special occasions.',
       items: [
-        { id: 1, name: 'Silk Pavada', price: '₹4,999', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' },
-        { id: 2, name: 'Designer Pavada', price: '₹5,499', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop' },
-        { id: 3, name: 'Festive Pavada', price: '₹4,499', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' },
-        { id: 4, name: 'Traditional Pavada', price: '₹3,999', image: 'https://images.unsplash.com/photo-1596385193050-d11c9f08e5fc?w=600&auto=format&fit=crop' }
+        { id: 1, name: 'Silk Pavada', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' },
+        { id: 2, name: 'Designer Pavada', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop' },
+        { id: 3, name: 'Festive Pavada', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' },
+        { id: 4, name: 'Traditional Pavada', image: 'https://images.unsplash.com/photo-1596385193050-d11c9f08e5fc?w=600&auto=format&fit=crop' }
       ]
     },
     'ready-to-wear-sarees': {
       title: 'Ready to Wear Sarees',
       description: 'Pre-stitched sarees for effortless draping, combining convenience with traditional elegance.',
       items: [
-        { id: 1, name: 'Designer Saree', price: '₹7,999', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop' },
-        { id: 2, name: 'Ruffle Saree', price: '₹8,499', image: 'https://images.unsplash.com/photo-1622290799326-f3a6c83b7d95?w=600&auto=format&fit=crop' },
+        { id: 1, name: 'Designer Saree', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop' },
+        { id: 2, name: 'Ruffle Saree',  image: 'https://images.unsplash.com/photo-1622290799326-f3a6c83b7d95?w=600&auto=format&fit=crop' },
         { id: 3, name: 'Party Saree', price: '₹9,999', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop' },
         { id: 4, name: 'Fusion Saree', price: '₹8,999', image: 'https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=600&auto=format&fit=crop' }
       ]

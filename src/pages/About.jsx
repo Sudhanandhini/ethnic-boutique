@@ -1,6 +1,14 @@
 import { motion } from 'framer-motion'
 import { Award, Heart, Users, Sparkles, CheckCircle } from 'lucide-react'
 
+// Testimonial images
+import testimonial1 from '../assets/1.jpg';
+import testimonial2 from '../assets/2.jpg';
+import testimonial3 from '../assets/3.jpg';
+import pink from '../assets/pink.jpg'
+import blue from "../assets/royal.jpg"
+
+
 const About = () => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -53,17 +61,17 @@ const About = () => {
     {
       name: "Meera Sharma",
       role: "Founder & Head Designer",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop"
+      image: testimonial1
     },
     {
       name: "Kavita Patel",
       role: "Senior Designer",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop"
+      image: testimonial2
     },
     {
       name: "Anjali Reddy",
       role: "Embroidery Specialist",
-      image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=400&auto=format&fit=crop"
+      image: testimonial3
     }
   ]
 
@@ -78,17 +86,17 @@ const About = () => {
             variants={staggerContainer}
             className="text-center"
           >
-            <motion.h1 
+            <motion.h1
               variants={fadeInUp}
               className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6"
             >
               About Us
             </motion.h1>
-            <motion.p 
+            <motion.p
               variants={fadeInUp}
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              Weaving dreams into reality, one stitch at a time. Discover the story behind Ethnic Boutique 
+              Weaving dreams into reality, one stitch at a time. Discover the story behind Ethnic Boutique
               and our passion for creating exquisite ethnic wear.
             </motion.p>
           </motion.div>
@@ -96,7 +104,7 @@ const About = () => {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-20 bg-white">
+      <section className="py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -109,25 +117,63 @@ const About = () => {
                 Our Story
               </h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                Ethnic Boutique was born from a deep love for traditional Indian textiles and a vision to 
-                make exquisite ethnic wear accessible to every woman. Founded in 2014, we started as a 
-                small studio with just three artisans and a dream to preserve and celebrate India's rich 
+                Ethnic Boutique was born from a deep love for traditional Indian textiles and a vision to
+                make exquisite ethnic wear accessible to every woman. Founded in 2014, we started as a
+                small studio with just three artisans and a dream to preserve and celebrate India's rich
                 textile heritage.
               </p>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                Over the years, we've grown into a trusted name in ethnic fashion, serving thousands of 
-                happy customers across the country. Our journey has been marked by countless milestones, 
-                from dressing brides for their special day to creating everyday ethnic wear that empowers 
+                Over the years, we've grown into a trusted name in ethnic fashion, serving thousands of
+                happy customers across the country. Our journey has been marked by countless milestones,
+                from dressing brides for their special day to creating everyday ethnic wear that empowers
                 women to embrace their cultural roots.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Today, we continue to blend traditional craftsmanship with contemporary design, creating 
-                pieces that are both timeless and trendy. Every garment that leaves our studio carries 
+                Today, we continue to blend traditional craftsmanship with contemporary design, creating
+                pieces that are both timeless and trendy. Every garment that leaves our studio carries
                 with it the dedication, skill, and passion of our talented artisans.
               </p>
             </motion.div>
 
             <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative flex justify-center items-center"
+            >
+              <div className="relative w-[600px] h-[600px]">
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-secondary/10 to-accent/10 rounded-full blur-2xl opacity-70"></div>
+
+                <div className="relative rounded-full w-full h-full overflow-hidden shadow-2xl">
+                  <img
+                    src={pink}
+                    alt="Bride"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="absolute -top-10 -left-16 w-56 h-40 rounded-2xl overflow-hidden shadow-xl z-10"
+              >
+                <img
+                  src={blue}
+                  alt="Bridal jewelry detail"
+                  className="w-[300px] h-[200px] object-cover"
+                />
+              </motion.div>
+              <div className="absolute -bottom-1 -right-6 w-32 h-32 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center text-white">
+                <div className="text-center">
+                  <p className="text-3xl font-bold">10+</p>
+                  <p className="text-sm">Years</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -152,13 +198,13 @@ const About = () => {
                   <p className="text-sm">Years</p>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-20 gradient-bg">
+      <section className="py-32 gradient-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -192,7 +238,7 @@ const About = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4 text-white">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-serif font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-serif font-bold text-gray-900 mb-4 mt-8">
                   {value.title}
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -205,7 +251,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -215,9 +261,9 @@ const About = () => {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="https://images.unsplash.com/photo-1583391733981-5a9d2a0e9d9e?w=800&auto=format&fit=crop"
+                src={pink}
                 alt="Why choose us"
-                className="rounded-2xl shadow-xl w-full h-96 object-cover"
+                className="rounded-2xl shadow-xl w-[600px] h-[600px] object-cover"
               />
             </motion.div>
 
@@ -231,7 +277,7 @@ const About = () => {
                 Why Choose Us
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                When you choose Ethnic Boutique, you're not just buying a garment – you're investing in 
+                When you choose Ethnic Boutique, you're not just buying a garment – you're investing in
                 quality, craftsmanship, and a piece of tradition. Here's what sets us apart:
               </p>
               <div className="space-y-3">
@@ -255,7 +301,7 @@ const About = () => {
       </section>
 
       {/* Our Team Section */}
-      <section className="py-20 gradient-bg">
+      <section className="py-28 gradient-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -292,10 +338,10 @@ const About = () => {
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div> */}
                 </div>
-                <div className="p-6 text-center -mt-20 relative z-10">
-                  <h3 className="text-2xl font-serif font-bold text-white mb-2">
+                <div className="p-6 text-center -mt-20 relative z-10 bg-white ">
+                  <h3 className="text-2xl font-serif font-bold text-black mb-2">
                     {member.name}
                   </h3>
                   <p className="text-secondary/70 font-medium">
@@ -309,7 +355,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
+      <section className="py-28 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"
@@ -321,7 +367,7 @@ const About = () => {
               Ready to Create Something Beautiful?
             </h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let us help you find or create the perfect outfit for your special occasion. 
+              Let us help you find or create the perfect outfit for your special occasion.
               Get in touch with us today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
