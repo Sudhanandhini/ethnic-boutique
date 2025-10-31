@@ -8,12 +8,14 @@ export default {
     extend: {
       colors: {
         primary: '#2D2D2D',
-        secondary: '#FFB6C1',
-        accent: '#FFC0CB',
+        secondary: '#b28b78',
+        accent: '#b28b78',
       },
       fontFamily: {
-        serif: ['Georgia', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        // Map Tailwind utilities to the Google fonts we import in src/index.css
+        // This ensures `font-serif` and `font-sans` use Texturina and Palanquin.
+        serif: ['Texturina', 'serif'],
+        sans: ['Palanquin', 'sans-serif'],
       },
     },
   },

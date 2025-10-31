@@ -117,7 +117,7 @@ const Collection = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-pink-500 mb-6 transition-colors"
+              className="inline-flex items-center gap-2 text-gray-600 hover:text-secondary mb-6 transition-colors"
             >
               <ArrowLeft size={20} />
               Back to Home
@@ -179,17 +179,17 @@ const Collection = () => {
                   <h3 className="text-lg font-serif font-bold text-gray-900 mb-2">
                     {item.name}
                   </h3>
-                  <p className="text-2xl font-bold text-pink-500 mb-4">
+                  <p className="text-2xl font-bold text-secondary mb-4">
                     {item.price}
                   </p>
-                  <motion.button
+                  {/* <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-full font-medium hover:shadow-lg transition-shadow flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-secondary to-accent text-white py-3 rounded-full font-medium hover:shadow-lg transition-shadow flex items-center justify-center gap-2"
                   >
                     <ShoppingBag size={18} />
                     Enquire Now
-                  </motion.button>
+                  </motion.button> */}
                 </div>
               </motion.div>
             ))}

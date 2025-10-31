@@ -98,9 +98,9 @@ const Contact = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-gradient-to-br from-pink-50 to-purple-50 p-6 rounded-2xl shadow-lg text-center"
+                className="bg-gradient-to-br from-secondary/10 to-accent/10 p-6 rounded-2xl shadow-lg text-center"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                <div className="w-14 h-14 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4 text-white">
                   {info.icon}
                 </div>
                 <h3 className="text-lg font-serif font-bold text-gray-900 mb-3">
@@ -233,8 +233,8 @@ const Contact = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-medium hover:shadow-lg transition-shadow flex items-center justify-center gap-2"
-                >
+                  className="w-full bg-gradient-to-r from-secondary to-accent text-white px-8 py-4 rounded-full font-medium hover:shadow-lg transition-shadow flex items-center justify-center gap-2">
+                
                   <Send className="w-5 h-5" />
                   Send Message
                 </motion.button>

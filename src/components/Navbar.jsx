@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">E</span>
             </div>
             <span className="text-2xl font-serif font-bold text-gray-800">
@@ -55,7 +55,7 @@ const Navbar = () => {
             <Link
               to="/"
               className={`text-sm font-medium transition-colors ${
-                isActive('/') ? 'text-pink-500' : 'text-gray-700 hover:text-pink-500'
+                isActive('/') ? 'text-secondary' : 'text-gray-700 hover:text-secondary'
               }`}
             >
               Home
@@ -75,7 +75,7 @@ const Navbar = () => {
               onMouseEnter={() => setShowCollections(true)}
               onMouseLeave={() => setShowCollections(false)}
             >
-              <button className="text-sm font-medium text-gray-700 hover:text-pink-500 flex items-center gap-1">
+              <button               className="text-sm font-medium text-gray-700 hover:text-secondary flex items-center gap-1">
                 Collections <ChevronDown className="w-4 h-4" />
               </button>
               
@@ -91,7 +91,7 @@ const Navbar = () => {
                       <Link
                         key={collection}
                         to={`/collection/${collection}`}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-500 capitalize"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary/10 hover:text-secondary capitalize"
                       >
                         {collection.replace(/-/g, ' ')}
                       </Link>
@@ -118,9 +118,9 @@ const Navbar = () => {
               Contact
             </Link>
 
-            <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-shadow">
+            {/* <button className="bg-gradient-to-r from-secondary to-accent text-white px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-shadow">
               Book Now
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -185,7 +185,7 @@ const Navbar = () => {
                 >
                   Contact
                 </Link>
-                <button className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-full text-sm font-medium mt-4">
+                <button className="w-full bg-gradient-to-r from-secondary to-accent text-white px-6 py-2 rounded-full text-sm font-medium mt-4">
                   Book Now
                 </button>
               </div>

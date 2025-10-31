@@ -49,7 +49,7 @@ const HomeNavbar = () => {
               {/* Hamburger Menu Icon */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-800 hover:text-pink-500 transition-colors"
+                className="text-gray-800 hover:text-secondary transition-colors"
                 aria-label="Toggle menu"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -92,14 +92,14 @@ const HomeNavbar = () => {
                 {/* Close Button */}
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="absolute top-6 right-6 text-gray-600 hover:text-pink-500 transition-colors"
+                  className="absolute top-6 right-6 text-gray-600 hover:text-secondary transition-colors"
                 >
                   <X size={24} />
                 </button>
 
                 {/* Logo */}
                 <div className="flex items-center space-x-2 mb-12 mt-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center">
                     <span className="text-white text-sm">✦</span>
                   </div>
                   <span className="text-lg font-serif font-bold text-gray-800">
@@ -114,7 +114,7 @@ const HomeNavbar = () => {
                       key={index}
                       to={item.path}
                       onClick={() => setIsMenuOpen(false)}
-                      className="block px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors font-medium"
+                      className="block px-4 py-3 text-gray-700 hover:bg-secondary/10 hover:text-secondary rounded-lg transition-colors font-medium"
                     >
                       {item.name}
                     </Link>

@@ -146,7 +146,7 @@ const About = () => {
                   className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center text-white">
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center text-white">
                 <div className="text-center">
                   <p className="text-3xl font-bold">10+</p>
                   <p className="text-sm">Years</p>
@@ -189,7 +189,7 @@ const About = () => {
                 whileHover={{ y: -10 }}
                 className="bg-white p-8 rounded-2xl shadow-lg text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4 text-white">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-serif font-bold text-gray-900 mb-3">
@@ -244,7 +244,7 @@ const About = () => {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle className="w-6 h-6 text-pink-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{feature}</span>
                   </motion.div>
                 ))}
@@ -298,7 +298,7 @@ const About = () => {
                   <h3 className="text-2xl font-serif font-bold text-white mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-pink-300 font-medium">
+                  <p className="text-secondary/70 font-medium">
                     {member.role}
                   </p>
                 </div>

@@ -45,7 +45,7 @@ const Home = () => {
   const [submittedData, setSubmittedData] = useState(null);
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
-  const [toastType, setToastType] = useState("success"); // "success" or "error"
+  const [toastType, setToastType] = useState("success");
 
   function validate() {
     const e = {};
@@ -73,10 +73,9 @@ const Home = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration
-      const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
-      const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
-      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
+      const serviceId = 'YOUR_SERVICE_ID';
+      const templateId = 'YOUR_TEMPLATE_ID';
+      const publicKey = 'YOUR_PUBLIC_KEY';
 
       const templateParams = {
         from_name: form.name,
@@ -87,14 +86,12 @@ const Home = () => {
 
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
-      // Success
       setSubmittedData({ ...form, submittedAt: new Date().toLocaleString() });
       setToastMessage("Message sent successfully!");
       setToastType("success");
       setShowToast(true);
       setForm({ name: "", email: "", message: "" });
 
-      // Auto-hide toast
       setTimeout(() => setShowToast(false), 3000);
     } catch (error) {
       console.error('EmailJS Error:', error);
@@ -128,22 +125,22 @@ const Home = () => {
 
   const features = [
     {
-      icon: <Sparkles className="w-6 h-6" />,
+      icon: <Sparkles className="w-8 h-8" />,
       title: "Saree",
       description: "Our services include bridal sarees, saree customization, and more."
     },
     {
-      icon: <Star className="w-6 h-6" />,
+      icon: <Star className="w-8 h-8" />,
       title: "Lehenga",
       description: "Bridal lehengas and customized designs for your special day."
     },
     {
-      icon: <Sparkles className="w-6 h-6" />,
+      icon: <Sparkles className="w-8 h-8" />,
       title: "Customization",
       description: "Made-to-order designs tailored to your unique style preferences."
     },
     {
-      icon: <Heart className="w-6 h-6" />,
+      icon: <Heart className="w-8 h-8" />,
       title: "Blouse",
       description: "Designer blouses for every occasion and celebration."
     }
@@ -182,7 +179,6 @@ const Home = () => {
 
   const totalSlides = Math.ceil(testimonials.length / 2);
 
-  // Auto-play functionality
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
@@ -196,23 +192,32 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden gradient-bg pt-20">
-        {/* Decorative Blobs */}
+      <section className="relative min-h-screen flex items-center overflow-hidden gradient-bg pt-20 bg-img">
         <div className="absolute top-20 right-10 w-96 h-96 gradient-blob rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-10 w-96 h-96 gradient-blob rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
             <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
               className="space-y-8"
             >
+              <motion.p
+                variants={fadeInUp}
+                className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic max-w-md leading-relaxed"
+                style={{
+                  letterSpacing: "0.15em",
+                  textTransform: "capitalize",
+                }}
+              >
+                Luxury redefined.
+              </motion.p>
+
               <motion.h1
                 variants={fadeInUp}
-                className="text-6xl md:text-7xl font-serif font-bold text-gray-900 leading-tight"
+                className="text-7xl md:text-7xl font-serif font-bold text-gray-900 leading-relaxed"
               >
                 Tradition<br />
                 Meets<br />
@@ -236,18 +241,15 @@ const Home = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
               className="relative flex justify-center items-center"
             >
-              <div className="relative w-[500px] h-[500px]">
-                {/* Soft glow background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-100 via-pink-50 to-purple-50 rounded-full blur-2xl opacity-70"></div>
+              <div className="relative w-[650px] h-[600px]">
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-secondary/10 to-accent/10 rounded-full blur-2xl opacity-70"></div>
 
-                {/* Main circular image */}
                 <div className="relative rounded-full w-full h-full overflow-hidden shadow-2xl">
                   <img
                     src={pink}
@@ -257,7 +259,6 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Small decorative image - top left only */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -267,7 +268,7 @@ const Home = () => {
                 <img
                   src={blue}
                   alt="Bridal jewelry detail"
-                  className="w-full h-full object-cover"
+                  className="w-[300px] h-[200px] object-cover"
                 />
               </motion.div>
             </motion.div>
@@ -276,7 +277,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 gradient-bg">
+      <section className="py-40 gradient-bg1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -285,9 +286,20 @@ const Home = () => {
             variants={staggerContainer}
             className="text-center mb-16"
           >
+            <motion.p
+              variants={fadeInUp}
+              className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed"
+              style={{
+                letterSpacing: "0.15em",
+                textTransform: "capitalize",
+              }}
+            >
+              Our range
+            </motion.p>
+
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl font-serif font-bold text-gray-900 mb-4"
+              className="text-5xl font-serif font-extrabold text-gray-900 mb-4 leading-[1.3]"
             >
               Explore Exquisite Bridal<br />Collections For Your Dream<br />Wedding
             </motion.h2>
@@ -298,21 +310,23 @@ const Home = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 py-10"
           >
             {features.map((feature, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow border border-gray-100 text-center"
+                className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow border border-gray-100 text-left"
               >
-                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-gray-800 border-2 border-gray-200">
+                <div className="w-24 h-24 bg-[#cda89687] rounded-full flex items-center justify-center mb-4 text-gray-800 border-2 border-gray-200">
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-serif font-bold text-gray-900 mb-3">
+
+                <h3 className="text-3xl font-serif font-bold text-gray-900 mb-3 mt-5 py-5 pt-24">
                   {feature.title}
                 </h3>
+
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {feature.description}
                 </p>
@@ -325,7 +339,6 @@ const Home = () => {
       {/* Latest Designs Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
           <div className="mb-12">
             <motion.div
               initial="hidden"
@@ -334,12 +347,21 @@ const Home = () => {
               variants={fadeInUp}
               className="text-center mb-16"
             >
-              <p className="text-sm text-gray-500 mb-2">Our Art</p>
+              <motion.p
+                variants={fadeInUp}
+                className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed"
+                style={{
+                  letterSpacing: "0.15em",
+                  textTransform: "capitalize",
+                }}
+              >
+                Our Art
+              </motion.p>
+
               <h2 className="text-5xl font-serif font-bold text-gray-900">Latest Designs</h2>
             </motion.div>
           </div>
 
-          {/* Grid Layout */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -347,10 +369,9 @@ const Home = () => {
             variants={staggerContainer}
             className="grid grid-cols-3 grid-rows-2 gap-4 mb-12"
           >
-            {/* Column 1, Row 1 - Bride Image */}
             <motion.div
               variants={fadeInUp}
-              className="rounded-3xl overflow-hidden h-64"
+              className="rounded-3xl overflow-hidden h-72"
             >
               <img
                 src={blue}
@@ -359,10 +380,9 @@ const Home = () => {
               />
             </motion.div>
 
-            {/* Column 2, Row 1 - Silk Saree Text Card */}
             <motion.div
               variants={fadeInUp}
-              className="bg-[#f5e6e0] rounded-3xl p-8 flex flex-col justify-center h-64 hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#f5e6e0] rounded-3xl p-8 flex flex-col justify-center h-72 hover:shadow-xl transition-shadow duration-300"
             >
               <h3 className="text-3xl font-serif font-bold text-gray-900 mb-4">Silk Saree</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -370,11 +390,10 @@ const Home = () => {
               </p>
             </motion.div>
 
-            {/* Column 3, Rows 1-2 - Tall Blue Gown Image */}
             <motion.div
               variants={fadeInUp}
               className="row-span-2 rounded-3xl overflow-hidden"
-              style={{ height: '530px' }}
+              style={{ height: '590px' }}
             >
               <img
                 src={pink}
@@ -383,10 +402,9 @@ const Home = () => {
               />
             </motion.div>
 
-            {/* Column 1, Row 2 - Bridal Lehenga Text Card */}
             <motion.div
               variants={fadeInUp}
-              className="bg-black rounded-3xl p-8 flex flex-col justify-center h-64 hover:shadow-xl transition-shadow duration-300"
+              className="bg-black rounded-3xl p-8 flex flex-col justify-center h-72 hover:shadow-xl transition-shadow duration-300"
             >
               <h3 className="text-3xl font-serif font-bold text-white mb-4">Bridal Lehenga</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
@@ -394,10 +412,9 @@ const Home = () => {
               </p>
             </motion.div>
 
-            {/* Column 2, Row 2 - Bride with Flowers Image */}
             <motion.div
               variants={fadeInUp}
-              className="rounded-3xl overflow-hidden h-64"
+              className="rounded-3xl overflow-hidden h-72"
             >
               <img
                 src={black}
@@ -407,7 +424,6 @@ const Home = () => {
             </motion.div>
           </motion.div>
 
-          {/* Read More Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -423,14 +439,12 @@ const Home = () => {
       </section>
 
       {/* Ethnic Essence Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-blue-50 relative overflow-hidden">
-        {/* Decorative gradient blobs */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-30"></div>
+      <section className="py-24 bg-gradient-to-br from-secondary/10 via-white to-blue-50 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl opacity-30"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Left Side - Image Composition */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -438,8 +452,7 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              {/* Main Large Circular Image */}
-              <div className="relative w-[450px] h-[450px] mx-auto">
+              <div className="relative w-[600px] h-[600px] mx-auto">
                 <div className="absolute inset-0 rounded-full overflow-hidden shadow-2xl">
                   <img
                     src={pink}
@@ -449,7 +462,6 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Top Small Image - Design Sketch */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -464,7 +476,6 @@ const Home = () => {
                 />
               </motion.div>
 
-              {/* Bottom Small Image - Embroidery Pattern */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -480,7 +491,6 @@ const Home = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Side - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -488,7 +498,16 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <p className="text-sm text-rose-400 font-medium tracking-wide">Our Story</p>
+              <motion.p
+                variants={fadeInUp}
+                className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic max-w-md leading-relaxed"
+                style={{
+                  letterSpacing: "0.15em",
+                  textTransform: "capitalize",
+                }}
+              >
+                Our Story
+              </motion.p>
 
               <h2 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-tight">
                 Ethnic Essence
@@ -520,7 +539,17 @@ const Home = () => {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">
+            <motion.p
+              variants={fadeInUp}
+              className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic pb-4 leading-relaxed"
+              style={{
+                letterSpacing: "0.15em",
+                textTransform: "capitalize",
+              }}
+            >
+              Our Work
+            </motion.p>
+            <h2 className="text-5xl font-serif font-bold text-gray-900 mb-4">
               How We Work
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -559,7 +588,7 @@ const Home = () => {
                 variants={fadeInUp}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                <div className="w-16 h-16 bg-[#f5e6e0] rounded-full flex items-center justify-center mx-auto mb-4 text-black text-2xl font-bold">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-serif font-bold text-gray-900 mb-2">
@@ -575,7 +604,7 @@ const Home = () => {
       </section>
 
       {/* Aari Work Section */}
-      <section className="py-20 gradient-bg">
+      <section className="py-28 gradient-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -584,7 +613,17 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl font-serif font-bold text-gray-900 mb-6">
+              <motion.p
+                variants={fadeInUp}
+                className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic pb-4 leading-relaxed"
+                style={{
+                  letterSpacing: "0.15em",
+                  textTransform: "capitalize",
+                }}
+              >
+                Our Work
+              </motion.p>
+              <h2 className="text-5xl font-serif font-bold text-gray-900 mb-6">
                 Aari Work
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
@@ -607,7 +646,6 @@ const Home = () => {
               </Link>
             </motion.div>
 
-            {/* Right Side - Image Composition */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -615,8 +653,7 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              {/* Main Large Circular Image */}
-              <div className="relative w-[450px] h-[450px] mx-auto">
+              <div className="relative w-[600px] h-[600px] mx-auto">
                 <div className="absolute inset-0 rounded-full overflow-hidden shadow-2xl">
                   <img
                     src={pink}
@@ -626,7 +663,6 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Top Small Image - Design Sketch */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -641,7 +677,6 @@ const Home = () => {
                 />
               </motion.div>
 
-              {/* Bottom Small Image - Embroidery Pattern */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -670,6 +705,16 @@ const Home = () => {
             variants={fadeInUp}
             className="text-center mb-16"
           >
+            <motion.p
+              variants={fadeInUp}
+              className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic pb-4 leading-relaxed"
+              style={{
+                letterSpacing: "0.15em",
+                textTransform: "capitalize",
+              }}
+            >
+              Our Gallery
+            </motion.p>
             <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">
               Image Gallery
             </h2>
@@ -719,8 +764,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50">
+      {/* CORRECTED Testimonials Section */}
+      <section className="py-24 bg-gradient-to-br from-pink-50 via-white to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -729,11 +774,21 @@ const Home = () => {
             variants={fadeInUp}
             className="text-center mb-16"
           >
-            <p className="text-sm text-rose-400 font-medium tracking-wide mb-2">Love Us</p>
-            <h2 className="text-5xl font-serif font-bold text-gray-900 mb-4">
+            <motion.p
+              variants={fadeInUp}
+              className="text-sm tracking-[0.2em] text-[#b28b78] font-medium italic mb-3"
+              style={{
+                letterSpacing: "0.2em",
+                textTransform: "capitalize",
+              }}
+            >
+              Love Us
+            </motion.p>
+
+            <h2 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
               Happy Customers Say
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+            <p className="text-gray-600 max-w-3xl mx-auto text-base leading-relaxed">
               Discover why brides choose Ethnic Boutique. Read firsthand experiences and let their stories inspire your perfect bridal journey.
             </p>
           </motion.div>
@@ -748,15 +803,14 @@ const Home = () => {
               <motion.div
                 animate={{ x: `-${currentSlide * 100}%` }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className="flex"
+                className="flex  p-4 "
               >
-                {/* Group testimonials in pairs */}
                 {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                   <div
                     key={slideIndex}
-                    className="w-full flex-shrink-0 px-4"
+                    className="w-full flex-shrink-0"
                   >
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-2 gap-8 px-4">
                       {testimonials.slice(slideIndex * 2, slideIndex * 2 + 2).map((testimonial, index) => (
                         <motion.div
                           key={index}
@@ -764,26 +818,33 @@ const Home = () => {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: index * 0.1 }}
-                          className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-shadow"
+                          className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                          style={{ padding: '48px' }}
                         >
                           {/* Date */}
-                          <p className="text-sm text-gray-500 mb-6">{testimonial.date}</p>
+                          <p className="text-sm text-gray-500 mb-8 font-medium">
+                            {testimonial.date}
+                          </p>
 
                           {/* Testimonial Text */}
-                          <p className="text-gray-900 text-xl font-serif font-semibold mb-8 leading-relaxed">
+                          <p className="text-gray-900 text-3xl md:text-3xl font-serif font-bold mb-10 leading-[1.4]">
                             {testimonial.text}
                           </p>
 
                           {/* User Info */}
-                          <div className="flex items-center gap-4">
+                          <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
                             <img
                               src={testimonial.image}
                               alt={testimonial.name}
-                              className="w-14 h-14 rounded-full object-cover"
+                              className="w-16 h-16 rounded-full object-cover shadow-md"
                             />
                             <div>
-                              <p className="font-semibold text-gray-900 text-base">{testimonial.name}</p>
-                              <p className="text-sm text-gray-500">{testimonial.location}</p>
+                              <p className="font-bold text-gray-900 text-lg">
+                                {testimonial.name}
+                              </p>
+                              <p className="text-sm text-gray-600 font-medium">
+                                {testimonial.location}
+                              </p>
                             </div>
                           </div>
                         </motion.div>
@@ -795,17 +856,17 @@ const Home = () => {
             </div>
 
             {/* Navigation Arrows */}
-            <div className="flex justify-center gap-4 mt-12">
+            <div className="flex justify-center gap-4 mt-16">
               <button
                 onClick={() => {
                   setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
                   setIsPaused(true);
                   setTimeout(() => setIsPaused(false), 5000);
                 }}
-                className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-gray-800 hover:bg-gray-100 transition-all border border-gray-200"
+                className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-50 transition-all border border-gray-200"
                 aria-label="Previous slide"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -815,17 +876,17 @@ const Home = () => {
                   setIsPaused(true);
                   setTimeout(() => setIsPaused(false), 5000);
                 }}
-                className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-gray-800 hover:bg-gray-100 transition-all border border-gray-200"
+                className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-50 transition-all border border-gray-200"
                 aria-label="Next slide"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             </div>
 
             {/* Progress Indicator Dots */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-3 mt-8">
               {Array.from({ length: totalSlides }).map((_, index) => (
                 <button
                   key={index}
@@ -835,8 +896,8 @@ const Home = () => {
                     setTimeout(() => setIsPaused(false), 5000);
                   }}
                   className={`transition-all duration-300 rounded-full ${currentSlide === index
-                    ? 'w-8 h-2 bg-gray-900'
-                    : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
+                    ? 'w-10 h-2.5 bg-gray-900'
+                    : 'w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400'
                     }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -846,47 +907,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <div className="px-4 py-4 sm:px-8 sm:py-6 md:px-16 md:py-10 lg:px-24 lg:py-12 xl:px-32 xl:py-16">
-        <section className="py-20 bg-gray-900">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="text-center"
-            >
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
-                Subscribe To Our Newsletter
-              </h2>
-              <p className="text-gray-400 mb-8">
-                Get the latest updates on new collections, special offers, and exclusive designs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-pink-400"
-                />
-                <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-shadow">
-                  Subscribe
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-
-      {/* Contact Form Section - With EmailJS */}
+      {/* Contact Form Section */}
       <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-blue-50 relative overflow-hidden">
-        {/* Decorative gradient blobs */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-40"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-40"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -950,7 +977,6 @@ const Home = () => {
               </form>
             </motion.div>
 
-            {/* Right Side - Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -958,7 +984,16 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <p className="text-sm text-rose-400 font-medium tracking-wide">Get InTouch</p>
+              <motion.p
+                variants={fadeInUp}
+                className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed"
+                style={{
+                  letterSpacing: "0.15em",
+                  textTransform: "capitalize",
+                }}
+              >
+                Get In Touch
+              </motion.p>
 
               <h2 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-tight">
                 Contact With Us
@@ -969,33 +1004,30 @@ const Home = () => {
               </p>
 
               <div className="space-y-4 pt-6">
-                {/* Phone */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-rose-400 rounded-full flex items-center justify-center text-white">
+                  <div className="w-12 h-12 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-gray-900 font-semibold text-lg">+91 98765 43210</p>
+                    <p className="text-gray-900 font-light text-lg">+91 98869 87278</p>
                   </div>
                 </div>
 
-                {/* Location */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-rose-400 rounded-full flex items-center justify-center text-white">
+                  <div className="w-12 h-12 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-gray-900 font-semibold text-lg">Bangalore, India</p>
+                    <p className="text-gray-900 font-light text-lg">#120, 14th Main, 29th Cross, Jayanagar, 4th Block, Bangalore, India</p>
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-rose-400 rounded-full flex items-center justify-center text-white">
+                  <div className="w-12 h-12 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-gray-900 font-semibold text-lg">support@sunsys.in</p>
+                    <p className="text-gray-900 font-light text-lg">sandysethnic@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -1003,7 +1035,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Toast Message */}
         {showToast && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1016,7 +1047,6 @@ const Home = () => {
           </motion.div>
         )}
 
-        {/* Show Submitted Data (for demo) */}
         {submittedData && (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
             <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-md">
@@ -1034,8 +1064,6 @@ const Home = () => {
           </div>
         )}
       </section>
-
-
     </div>
   )
 }

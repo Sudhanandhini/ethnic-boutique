@@ -99,15 +99,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3 text-sm text-gray-400">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
-                <span>123 Fashion Street, Mumbai, India</span>
+                <span>#120, 14th Main, 29th Cross, Jayanagar, 4th Block, Bangalore, India</span>
               </li>
               <li className="flex items-center space-x-3 text-sm text-gray-400">
                 <Phone size={18} className="flex-shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 98869 87278</span>
               </li>
               <li className="flex items-center space-x-3 text-sm text-gray-400">
                 <Mail size={18} className="flex-shrink-0" />
-                <span>info@ethnicboutique.com</span>
+                <span>sandysethnic@gmail.com</span>
               </li>
             </ul>
           </motion.div>
@@ -119,12 +119,10 @@ const Footer = () => {
             © 2025 Ethnic Boutique. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-pink-400 text-sm transition-colors">
-              Privacy Policy
+            <a href="https://www.sunsys.in/" className="text-gray-400 hover:text-pink-400 text-sm transition-colors">
+              Developed by Sunsys Technologies Pvt Ltd
             </a>
-            <a href="#" className="text-gray-400 hover:text-pink-400 text-sm transition-colors">
-              Terms of Service
-            </a>
+            
           </div>
         </div>
       </div>

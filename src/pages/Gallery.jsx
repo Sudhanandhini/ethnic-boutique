@@ -86,7 +86,7 @@ const Gallery = () => {
                   onClick={() => setActiveFilter(category.id)}
                   className={`px-6 py-2 rounded-full font-medium transition-all ${
                     activeFilter === category.id
-                      ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-secondary to-accent text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -122,7 +122,7 @@ const Gallery = () => {
                         }}
                         className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                           activeFilter === category.id
-                            ? 'bg-pink-100 text-pink-600 font-medium'
+                            ? 'bg-secondary/10 text-secondary font-medium'
                             : 'text-gray-700 hover:bg-gray-50'
                         }`}
                       >
@@ -141,8 +141,8 @@ const Gallery = () => {
             animate={{ opacity: 1 }}
             className="text-center mb-8"
           >
-            <p className="text-gray-600">
-              Showing <span className="font-semibold text-pink-500">{filteredImages.length}</span> results
+              <p className="text-gray-600">
+              Showing <span className="font-semibold text-secondary">{filteredImages.length}</span> results
               {activeFilter !== 'all' && (
                 <span> in <span className="font-semibold">{categories.find(c => c.id === activeFilter)?.label}</span></span>
               )}
@@ -209,7 +209,7 @@ const Gallery = () => {
               </p>
               <button
                 onClick={() => setActiveFilter('all')}
-                className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-shadow"
+                className="bg-gradient-to-r from-secondary to-accent text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-shadow"
               >
                 View All Items
               </button>
