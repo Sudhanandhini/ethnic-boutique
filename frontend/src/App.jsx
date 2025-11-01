@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import HomeNavbar from './components/HomeNavbar'
 import Footer from './components/Footer'
@@ -7,6 +7,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Gallery from './pages/Gallery'
 import Collection from './pages/Collection'
+import './index.css'
 
 function AppContent() {
   const location = useLocation()
@@ -27,12 +28,6 @@ function AppContent() {
   )
 }
 
-function App() {
-  return (
-    <Router>
-      <AppContent />
-    </Router>
-  )
+export default function App() {
+  return <AppContent />
 }
-
-export default App

@@ -30,8 +30,9 @@ const HomeNavbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
+          scrolled ? 'bg-white shadow-md' : 'bg-transparent'
         }`}
+        role="navigation"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 sm:h-24">
@@ -49,7 +50,12 @@ const HomeNavbar = () => {
               {/* Contact Button - Visible on all screens */}
               <Link
                 to="/contact"
-                className="bg-black text-white px-4 py-2 sm:px-6 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-800 transition-colors"
+                className={`px-4 py-2 sm:px-6 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
+                  scrolled
+                    ? 'bg-black text-white hover:bg-gray-800'
+                    : 'bg-white text-black hover:bg-gray-100'
+                }`}
+                aria-label="Contact"
               >
                 Contact
               </Link>
@@ -57,7 +63,7 @@ const HomeNavbar = () => {
               {/* Hamburger Menu Icon */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-800 hover:text-secondary transition-colors p-2"
+                className="transition-colors p-2 text-gray-800 hover:text-secondary"
                 aria-label="Toggle menu"
               >
                 {isMenuOpen ? (
@@ -161,7 +167,6 @@ const HomeNavbar = () => {
                       href="#"
                       className="w-9 h-9 sm:w-10 sm:h-10 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black hover:shadow-lg transition-shadow"
                       aria-label="Facebook"
-                      rel="noopener noreferrer"
                     >
                       <span className="text-xs sm:text-sm">f</span>
                     </a>
@@ -170,7 +175,6 @@ const HomeNavbar = () => {
                       href="#"
                       className="w-9 h-9 sm:w-10 sm:h-10 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black hover:shadow-lg transition-shadow"
                       aria-label="LinkedIn"
-                      rel="noopener noreferrer"
                     >
                       <span className="text-xs sm:text-sm">in</span>
                     </a>
@@ -179,7 +183,6 @@ const HomeNavbar = () => {
                       href="#"
                       className="w-9 h-9 sm:w-10 sm:h-10 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black hover:shadow-lg transition-shadow"
                       aria-label="Twitter"
-                      rel="noopener noreferrer"
                     >
                       <span className="text-xs sm:text-sm">tw</span>
                     </a>

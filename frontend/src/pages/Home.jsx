@@ -6,6 +6,10 @@ import pink from '../assets/pink.jpg'
 import blue from "../assets/royal.jpg"
 import black from "../assets/1_b.jpg"
 import worker from "../assets/worker.jpg"
+import pinkbg from "../assets/bg-pink.png"
+import bluebg from "../assets/bg-blue.png"
+import bg1 from  "../assets/template-asset-01247b8c.png"
+import bg2 from "../assets/template-asset-cbc71046.png"
 
 // Gallery images
 import gallery1 from '../assets/81.jpg';
@@ -208,10 +212,10 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-img">
         <div className="absolute top-0 right-0 hidden md:block">
-          <img src="/src/assets/bg-pink.png" alt="Logo" className="w-64 lg:w-96 h-auto opacity-50" />
+          <img src={pinkbg} alt="Logo" className="w-64 lg:w-96 h-auto opacity-50" />
         </div>
         <div className="absolute top-0 left-0 hidden md:block">
-          <img src="/src/assets/bg-blue.png" alt="Logo" className="w-64 lg:w-96 h-auto opacity-50" />
+          <img src={bluebg} alt="Logo" className="w-64 lg:w-96 h-auto opacity-50" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 w-full">
@@ -439,10 +443,10 @@ const Home = () => {
       {/* Ethnic Essence Section */}
       <section className="py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute right-0 hidden lg:block">
-          <img src='/src/assets/template-asset-01247b8c.png' className="w-64 h-auto opacity-30" />
+          <img src={bg1} className="w-64 h-auto opacity-30" />
         </div>
         <div className="absolute left-0 hidden lg:block">
-          <img src='/src/assets/template-asset-cbc71046.png' className="w-64 h-auto opacity-30" />
+          <img src={bg2} className="w-64 h-auto opacity-30" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
