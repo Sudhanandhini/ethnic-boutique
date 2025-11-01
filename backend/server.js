@@ -40,8 +40,8 @@ transporter.verify((error, success) => {
 });
 
 // Contact form endpoint
-// Use TO_EMAIL env var if provided, otherwise fall back to Sudhanandhini's address.
-const TO_EMAIL = process.env.TO_EMAIL || 'sudhanandhini@sunsys.in'
+// Use TO_EMAIL env var if provided, otherwise fall back to support@sunsys.in
+const TO_EMAIL = process.env.TO_EMAIL || 'support@sunsys.in'
 
 app.post('/api/contact', async (req, res) => {
   const { name, email, phone, subject, message } = req.body;

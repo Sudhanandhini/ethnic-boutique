@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Sparkles, Heart, Shield, Award, ArrowRight, Star, Phone, Mail, MapPin } from 'lucide-react'
 import { useState, useEffect } from 'react'
-import emailjs from '@emailjs/browser'
 import pink from '../assets/pink.jpg'
 import blue from "../assets/royal.jpg"
 import black from "../assets/1_b.jpg"
@@ -39,10 +38,11 @@ const Home = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    phone: "",
+    subject: "",
     message: "",
   });
   const [errors, setErrors] = useState({});
-  const [submittedData, setSubmittedData] = useState(null);
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [toastType, setToastType] = useState("success");
@@ -73,32 +73,41 @@ const Home = () => {
     setIsSubmitting(true);
 
     try {
-      const serviceId = 'YOUR_SERVICE_ID';
-      const templateId = 'YOUR_TEMPLATE_ID';
-      const publicKey = 'YOUR_PUBLIC_KEY';
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone || '',
+          subject: form.subject || 'Contact from Home Page',
+          message: form.message,
+        }),
+      });
 
-      const templateParams = {
-        from_name: form.name,
-        from_email: form.email,
-        message: form.message,
-        to_email: 'support@sunsys.in'
-      };
+      const data = await response.json();
 
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
-      setSubmittedData({ ...form, submittedAt: new Date().toLocaleString() });
-      setToastMessage("Message sent successfully!");
-      setToastType("success");
-      setShowToast(true);
-      setForm({ name: "", email: "", message: "" });
-
-      setTimeout(() => setShowToast(false), 3000);
+      if (response.ok) {
+        setToastMessage("Thank you for contacting us! We will get back to you soon.");
+        setToastType("success");
+        setShowToast(true);
+        setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+        
+        setTimeout(() => setShowToast(false), 5000);
+      } else {
+        setToastMessage(data.message || "Something went wrong. Please try again.");
+        setToastType("error");
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 5000);
+      }
     } catch (error) {
-      console.error('EmailJS Error:', error);
-      setToastMessage("Failed to send message. Please try again.");
+      console.error('Error:', error);
+      setToastMessage("Failed to send message. Please try again later.");
       setToastType("error");
       setShowToast(true);
-      setTimeout(() => setShowToast(false), 3000);
+      setTimeout(() => setShowToast(false), 5000);
     } finally {
       setIsSubmitting(false);
     }
@@ -764,7 +773,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CORRECTED Testimonials Section */}
+      {/* Testimonials Section */}
       <section className="py-24 bg-gradient-to-br from-pink-50 via-white to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -803,7 +812,7 @@ const Home = () => {
               <motion.div
                 animate={{ x: `-${currentSlide * 100}%` }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className="flex  p-4 "
+                className="flex p-4"
               >
                 {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                   <div
@@ -833,11 +842,6 @@ const Home = () => {
 
                           {/* User Info */}
                           <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                            {/* <img
-                              src={testimonial.image}
-                              alt={testimonial.name}
-                              className="w-16 h-16 rounded-full object-cover shadow-md"
-                            /> */}
                             <div>
                               <p className="font-bold text-gray-900 text-lg">
                                 {testimonial.name}
@@ -933,8 +937,8 @@ const Home = () => {
                     value={form.name}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full bg-gray-100 border-0 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-pink-400 placeholder-gray-500 disabled:opacity-50"
-                    placeholder="First Name"
+                    className="w-full bg-gray-100 border-0 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
+                    placeholder="Your Name *"
                   />
                   {errors.name && <p className="text-red-500 text-sm mt-2 ml-4">{errors.name}</p>}
                 </div>
@@ -946,10 +950,34 @@ const Home = () => {
                     value={form.email}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full bg-gray-100 border-0 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-pink-400 placeholder-gray-500 disabled:opacity-50"
-                    placeholder="Your email"
+                    className="w-full bg-gray-100 border-0 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
+                    placeholder="Your Email *"
                   />
                   {errors.email && <p className="text-red-500 text-sm mt-2 ml-4">{errors.email}</p>}
+                </div>
+
+                <div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
+                    disabled={isSubmitting}
+                    className="w-full bg-gray-100 border-0 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
+                    placeholder="Phone Number (Optional)"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={form.subject}
+                    onChange={handleChange}
+                    disabled={isSubmitting}
+                    className="w-full bg-gray-100 border-0 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
+                    placeholder="Subject (Optional)"
+                  />
                 </div>
 
                 <div>
@@ -958,9 +986,9 @@ const Home = () => {
                     value={form.message}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    rows="4"
-                    className="w-full bg-gray-100 border-0 rounded-3xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-pink-400 placeholder-gray-500 resize-none disabled:opacity-50"
-                    placeholder="Message"
+                    rows="2"
+                    className="w-full bg-gray-100 border-0 rounded-3xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 resize-none disabled:opacity-50"
+                    placeholder="Your Message *"
                   />
                   {errors.message && <p className="text-red-500 text-sm mt-2 ml-4">{errors.message}</p>}
                 </div>
@@ -969,9 +997,16 @@ const Home = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-black text-white px-12 py-3 rounded-full hover:bg-gray-800 transition-all font-medium uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-black text-white px-12 py-3 rounded-full hover:bg-gray-800 transition-all font-medium uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                   >
-                    {isSubmitting ? 'Sending...' : 'Submit'}
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        Sending...
+                      </>
+                    ) : (
+                      'Submit'
+                    )}
                   </button>
                 </div>
               </form>
@@ -1035,33 +1070,29 @@ const Home = () => {
           </div>
         </div>
 
+        {/* Toast Notification */}
         {showToast && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className={`fixed bottom-8 right-8 ${toastType === 'success' ? 'bg-green-600' : 'bg-red-600'
-              } text-white px-6 py-3 rounded-full shadow-lg z-50`}
+            initial={{ opacity: 0, y: 50, scale: 0.3 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.5 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className={`fixed bottom-8 right-8 ${toastType === 'success'
+                ? 'bg-green-600'
+                : 'bg-red-600'
+              } text-white px-6 py-4 rounded-2xl shadow-2xl z-50 flex items-center gap-3`}
           >
-            {toastMessage}
+            {toastType === 'success' ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
+            <span className="font-medium">{toastMessage}</span>
           </motion.div>
-        )}
-
-        {submittedData && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-md">
-              <h3 className="text-lg font-semibold mb-4">Message Sent Successfully!</h3>
-              <p><strong>Name:</strong> {submittedData.name}</p>
-              <p><strong>Email:</strong> {submittedData.email}</p>
-              <p><strong>Message:</strong> {submittedData.message}</p>
-              <p className="text-sm text-gray-500 mt-2">
-                Submitted at: {submittedData.submittedAt}
-              </p>
-              <p className="text-sm text-green-600 mt-2">
-                ✓ Email sent to support@sunsys.in
-              </p>
-            </div>
-          </div>
         )}
       </section>
     </div>
