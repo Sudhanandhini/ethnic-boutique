@@ -192,9 +192,16 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden gradient-bg pt-20 bg-img">
-        <div className="absolute top-20 right-10 w-96 h-96 gradient-blob rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 gradient-blob rounded-full blur-3xl"></div>
+      <section className="relative min-h-screen flex items-center overflow-hidden  pt-20 bg-img">
+        <div className="absolute top-0 right-0 ">
+          <img src="/src/assets/bg-pink.png" alt="Logo" className="w-100 h-100 bg-pink" />
+        </div>
+        <div className="absolute top-0 left-0 ">
+          <img src="/src/assets/bg-blue.png" alt="Logo" className="w-100 h-100 bg-blue" />
+        </div>
+        
+{/* <div className="absolute top-0 right-0 w-96 h-96 gradient-blob rounded-full blur-lg"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 gradient-blob rounded-full blur-3xl"></div> */}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -217,7 +224,7 @@ const Home = () => {
 
               <motion.h1
                 variants={fadeInUp}
-                className="text-7xl md:text-7xl font-serif font-bold text-gray-900 leading-relaxed"
+                className="text-7xl md:text-7xl  font-bold text-gray-900 leading-relaxed"
               >
                 Tradition<br />
                 Meets<br />
@@ -232,12 +239,12 @@ const Home = () => {
               </motion.p>
 
               <motion.div variants={fadeInUp}>
-                <Link
+                {/* <Link
                   to="/gallery"
                   className="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors"
                 >
                   Shop Now
-                </Link>
+                </Link> */}
               </motion.div>
             </motion.div>
 
@@ -277,7 +284,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-40 gradient-bg1">
+      <section className="py-35 gradient-bg1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -299,7 +306,7 @@ const Home = () => {
 
             <motion.h2
               variants={fadeInUp}
-              className="text-5xl font-serif font-extrabold text-gray-900 mb-4 leading-[1.3]"
+              className="text-5xl  font-extrabold text-gray-900 mb-4 leading-[1.3]"
             >
               Explore Exquisite Bridal<br />Collections For Your Dream<br />Wedding
             </motion.h2>
@@ -323,7 +330,7 @@ const Home = () => {
                   {feature.icon}
                 </div>
 
-                <h3 className="text-3xl font-serif font-bold text-gray-900 mb-3 mt-5 py-5 pt-24">
+                <h3 className="text-3xl  font-bold text-gray-900 mb-3 mt-5 py-5 pt-24">
                   {feature.title}
                 </h3>
 
@@ -358,7 +365,7 @@ const Home = () => {
                 Our Art
               </motion.p>
 
-              <h2 className="text-5xl font-serif font-bold text-gray-900">Latest Designs</h2>
+              <h2 className="text-5xl  font-bold text-gray-900">Latest Designs</h2>
             </motion.div>
           </div>
 
@@ -384,7 +391,7 @@ const Home = () => {
               variants={fadeInUp}
               className="bg-[#f5e6e0] rounded-3xl p-8 flex flex-col justify-center h-72 hover:shadow-xl transition-shadow duration-300"
             >
-              <h3 className="text-3xl font-serif font-bold text-gray-900 mb-4">Silk Saree</h3>
+              <h3 className="text-3xl  font-bold text-gray-900 mb-4">Silk Saree</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Crafted from the finest silk, this saree embodies timeless elegance and tradition. Perfect for your special day.
               </p>
@@ -406,7 +413,7 @@ const Home = () => {
               variants={fadeInUp}
               className="bg-black rounded-3xl p-8 flex flex-col justify-center h-72 hover:shadow-xl transition-shadow duration-300"
             >
-              <h3 className="text-3xl font-serif font-bold text-white mb-4">Bridal Lehenga</h3>
+              <h3 className="text-3xl  font-bold text-white mb-4">Bridal Lehenga</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Adorned with intricate embroidery, this lehenga exudes opulence and grace. A dream come true for every bride.
               </p>
@@ -439,9 +446,13 @@ const Home = () => {
       </section>
 
       {/* Ethnic Essence Section */}
-      <section className="py-24 bg-gradient-to-br from-secondary/10 via-white to-blue-50 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl opacity-30"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
+      <section className="py-24  from-secondary/10 via-white to-blue-50 relative overflow-hidden">
+        <div className="absolute right-0">
+          <img src='/src/assets/template-asset-01247b8c.png' className="w-full h-full object-contain" />
+        </div>
+        <div className="absolute ">
+          <img src='/src/assets/template-asset-cbc71046.png' className="bg-essence-img" />
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -509,11 +520,11 @@ const Home = () => {
                 Our Story
               </motion.p>
 
-              <h2 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-tight">
+              <h2 className="text-5xl md:text-6xl  font-bold text-gray-900 leading-tight">
                 Ethnic Essence
               </h2>
 
-              <h3 className="text-2xl font-serif font-semibold text-gray-800">
+              <h3 className="text-2xl  font-semibold text-gray-800">
                 Crafted with Passion
               </h3>
 
@@ -549,7 +560,7 @@ const Home = () => {
             >
               Our Work
             </motion.p>
-            <h2 className="text-5xl font-serif font-bold text-gray-900 mb-4">
+            <h2 className="text-5xl  font-bold text-gray-900 mb-4">
               How We Work
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -567,7 +578,7 @@ const Home = () => {
             <img
               src={worker}
               alt="Our team at work"
-              className="w-full h-96 object-cover rounded-2xl shadow-xl"
+              className="w-full h-100 object-cover rounded-2xl shadow-xl top-top"
             />
           </motion.div>
 
@@ -591,7 +602,7 @@ const Home = () => {
                 <div className="w-16 h-16 bg-[#f5e6e0] rounded-full flex items-center justify-center mx-auto mb-4 text-black text-2xl font-bold">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-serif font-bold text-gray-900 mb-2">
+                <h3 className="text-xl  font-bold text-gray-900 mb-2">
                   {item.title}
                 </h3>
                 <p className="text-gray-600">
@@ -604,7 +615,7 @@ const Home = () => {
       </section>
 
       {/* Aari Work Section */}
-      <section className="py-28 gradient-bg">
+      <section className="py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -623,7 +634,7 @@ const Home = () => {
               >
                 Our Work
               </motion.p>
-              <h2 className="text-5xl font-serif font-bold text-gray-900 mb-6">
+              <h2 className="text-5xl  font-bold text-gray-900 mb-6">
                 Aari Work
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
@@ -715,7 +726,7 @@ const Home = () => {
             >
               Our Gallery
             </motion.p>
-            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl  font-bold text-gray-900 mb-4">
               Image Gallery
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -765,7 +776,7 @@ const Home = () => {
       </section>
 
       {/* CORRECTED Testimonials Section */}
-      <section className="py-24 bg-gradient-to-br from-pink-50 via-white to-purple-50">
+      <section className="py-24 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -785,7 +796,7 @@ const Home = () => {
               Love Us
             </motion.p>
 
-            <h2 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
+            <h2 className="text-5xl md:text-6xl  font-bold text-gray-900 mb-6">
               Happy Customers Say
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-base leading-relaxed">
@@ -827,17 +838,17 @@ const Home = () => {
                           </p>
 
                           {/* Testimonial Text */}
-                          <p className="text-gray-900 text-3xl md:text-3xl font-serif font-bold mb-10 leading-[1.4]">
+                          <p className="text-gray-900 text-3xl md:text-3xl  font-bold mb-10 leading-[1.4]">
                             {testimonial.text}
                           </p>
 
                           {/* User Info */}
                           <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                            <img
+                            {/* <img
                               src={testimonial.image}
                               alt={testimonial.name}
                               className="w-16 h-16 rounded-full object-cover shadow-md"
-                            />
+                            /> */}
                             <div>
                               <p className="font-bold text-gray-900 text-lg">
                                 {testimonial.name}
@@ -908,8 +919,8 @@ const Home = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-blue-50 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-40"></div>
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute top-10 left-0 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-40"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-40"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -921,7 +932,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="bg-white rounded-3xl shadow-2xl p-8 md:p-12"
             >
-              <h2 className="text-3xl font-serif font-bold text-gray-900 mb-8">
+              <h2 className="text-3xl  font-bold text-gray-900 mb-8">
                 Get In Touch
               </h2>
 
@@ -995,7 +1006,7 @@ const Home = () => {
                 Get In Touch
               </motion.p>
 
-              <h2 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 leading-tight">
+              <h2 className="text-5xl md:text-6xl  font-bold text-gray-900 leading-tight">
                 Contact With Us
               </h2>
 

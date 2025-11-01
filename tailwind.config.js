@@ -12,9 +12,9 @@ export default {
         accent: '#b28b78',
       },
       fontFamily: {
-        // Map Tailwind utilities to the Google fonts we import in src/index.css
-        // This ensures `font-serif` and `font-sans` use Texturina and Palanquin.
-        serif: ['Texturina', 'serif'],
+        // Prefer Arsenica for the serif family so `font-serif` uses Arsenica first.
+        // Falls back to Texturina and the generic serif.
+        serif: ['Rochester', 'cursive '],
         sans: ['Palanquin', 'sans-serif'],
       },
     },

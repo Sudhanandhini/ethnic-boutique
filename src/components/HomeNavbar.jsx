@@ -33,14 +33,14 @@ const HomeNavbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-25">
             {/* Logo - Left Side */}
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+              {/* <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
                 <span className="text-white text-xs">✦</span>
-              </div>
+              </div> */}
               <span className="text-sm font-medium text-gray-800">
-                Ethnic Boutique
+                <img src="/src/assets/logo_1.png" alt="Ethnic Boutique" style={{height:'100px '}} className="logo w-auto rounded-full" />
               </span>
             </Link>
 
@@ -99,11 +99,11 @@ const HomeNavbar = () => {
 
                 {/* Logo */}
                 <div className="flex items-center space-x-2 mb-12 mt-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center">
+                  {/* <div className="w-8 h-8 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center">
                     <span className="text-white text-sm">✦</span>
-                  </div>
+                  </div> */}
                   <span className="text-lg font-serif font-bold text-gray-800">
-                    Ethnic Boutique
+                        <img src="/src/assets/logo_1.png" alt="Ethnic Boutique" style={{height:'100px '}} className="logo w-auto rounded-full" />
                   </span>
                 </div>
 
