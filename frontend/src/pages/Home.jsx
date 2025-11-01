@@ -191,12 +191,17 @@ const Home = () => {
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
-        setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+        setCurrentSlide((prev) => {
+          if (prev === testimonials.length - 1) {
+            return 0;
+          }
+          return prev + 1;
+        });
       }, 5000);
 
       return () => clearInterval(interval);
     }
-  }, [isPaused, totalSlides]);
+  }, [isPaused, testimonials.length]);
 
   return (
     <div className="min-h-screen">
@@ -746,7 +751,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section - RESPONSIVE: 1 on Mobile, 2 on Desktop */}
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -778,50 +783,48 @@ const Home = () => {
             onMouseLeave={() => setIsPaused(false)}
           >
             <div className="overflow-hidden">
+              {/* Mobile: Shows 1 at a time, Desktop: Shows 2 at a time */}
               <motion.div
-                animate={{ x: `-${currentSlide * 100}%` }}
+                animate={{
+                  x: `calc(-${currentSlide * 100}%)`
+                }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className="flex p-2 sm:p-4"
+                className="flex"
               >
-                {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+                {testimonials.map((testimonial, index) => (
                   <div
-                    key={slideIndex}
-                    className="w-full flex-shrink-0"
+                    key={index}
+                    className="w-full md:w-1/2 flex-shrink-0 px-2 sm:px-4"
                   >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 px-2 sm:px-4">
-                      {testimonials.slice(slideIndex * 2, slideIndex * 2 + 2).map((testimonial, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: index * 0.1 }}
-                          className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6 sm:p-8 lg:p-12"
-                        >
-                          {/* Date */}
-                          <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-8 font-medium">
-                            {testimonial.date}
-                          </p>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6 sm:p-8 lg:p-10 h-full"
+                    >
+                      {/* Date */}
+                      <p className="text-xs sm:text-sm text-gray-500 mb-6 sm:mb-8 font-medium">
+                        {testimonial.date}
+                      </p>
 
-                          {/* Testimonial Text */}
-                          <p className="text-gray-900 text-lg sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-10 leading-tight">
-                            {testimonial.text}
-                          </p>
+                      {/* Testimonial Text */}
+                      <p className="text-gray-900 text-lg sm:text-xl lg:text-2xl font-bold mb-8 sm:mb-10 leading-tight">
+                        {testimonial.text}
+                      </p>
 
-                          {/* User Info */}
-                          <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                            <div>
-                              <p className="font-bold text-gray-900 text-base sm:text-lg">
-                                {testimonial.name}
-                              </p>
-                              <p className="text-xs sm:text-sm text-gray-600 font-medium">
-                                {testimonial.location}
-                              </p>
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
+                      {/* User Info */}
+                      <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
+                        <div>
+                          <p className="font-bold text-gray-900 text-base sm:text-lg">
+                            {testimonial.name}
+                          </p>
+                          <p className="text-sm text-gray-600 font-medium">
+                            {testimonial.location}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
                 ))}
               </motion.div>
@@ -831,12 +834,15 @@ const Home = () => {
             <div className="flex justify-center gap-4 mt-12 sm:mt-16">
               <button
                 onClick={() => {
-                  setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+                  setCurrentSlide((prev) => {
+                    if (prev === 0) return testimonials.length - 1;
+                    return prev - 1;
+                  });
                   setIsPaused(true);
                   setTimeout(() => setIsPaused(false), 5000);
                 }}
                 className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-50 transition-all border border-gray-200"
-                aria-label="Previous slide"
+                aria-label="Previous testimonial"
               >
                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -844,12 +850,15 @@ const Home = () => {
               </button>
               <button
                 onClick={() => {
-                  setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+                  setCurrentSlide((prev) => {
+                    if (prev === testimonials.length - 1) return 0;
+                    return prev + 1;
+                  });
                   setIsPaused(true);
                   setTimeout(() => setIsPaused(false), 5000);
                 }}
                 className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-50 transition-all border border-gray-200"
-                aria-label="Next slide"
+                aria-label="Next testimonial"
               >
                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -858,8 +867,8 @@ const Home = () => {
             </div>
 
             {/* Progress Indicator Dots */}
-            <div className="flex justify-center gap-3 mt-6 sm:mt-8">
-              {Array.from({ length: totalSlides }).map((_, index) => (
+            <div className="flex justify-center gap-3 mt-8">
+              {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => {
@@ -871,13 +880,15 @@ const Home = () => {
                     ? 'w-8 sm:w-10 h-2 sm:h-2.5 bg-gray-900'
                     : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-gray-300 hover:bg-gray-400'
                     }`}
-                  aria-label={`Go to slide ${index + 1}`}
+                  aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
             </div>
           </div>
         </div>
       </section>
+
+
 
       {/* Contact Form Section */}
       <section className="py-12 sm:py-20 relative overflow-hidden">
@@ -1042,8 +1053,8 @@ const Home = () => {
             exit={{ opacity: 0, scale: 0.5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className={`fixed bottom-4 right-4 sm:bottom-8 sm:right-8 ${toastType === 'success'
-                ? 'bg-green-600'
-                : 'bg-red-600'
+              ? 'bg-green-600'
+              : 'bg-red-600'
               } text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl z-50 flex items-center gap-2 sm:gap-3 max-w-sm`}
           >
             {toastType === 'success' ? (
