@@ -123,8 +123,8 @@ const About = () => {
                 textile heritage.
               </p>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                Over the years, we've grown into a trusted name in ethnic fashion, serving thousands of
-                happy customers across the country. Our journey has been marked by countless milestones,
+                Over the years, we've grown into a trusted name in ethnic fashion, serving hundreds of
+                happy customers across Bengaluru. Our journey has been marked by countless milestones,
                 from dressing brides for their special day to creating everyday ethnic wear that empowers
                 women to embrace their cultural roots.
               </p>
@@ -301,7 +301,7 @@ const About = () => {
       </section>
 
       {/* Our Team Section */}
-      <section className="py-28 gradient-bg1">
+      {/* <section className="py-28 gradient-bg1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -338,7 +338,7 @@ const About = () => {
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div> */}
+                 
                 </div>
                 <div className="p-6 text-center -mt-20 relative z-10 bg-white ">
                   <h3 className="text-2xl font-serif font-bold text-black mb-2">
@@ -352,10 +352,10 @@ const About = () => {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-28 bg-white">
+      <section className="py-28 gradient-bg2">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"

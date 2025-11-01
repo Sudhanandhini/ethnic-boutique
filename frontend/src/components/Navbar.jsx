@@ -39,15 +39,15 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-25">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center">
+          <Link to="/" className="flex items-center space-x-2 ">
+            {/* <div className="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">E</span>
-            </div>
-            <span className="text-2xl font-serif font-bold text-gray-800">
-              Ethnic Boutique
-            </span>
+            </div> */}
+             <span className="text-sm font-medium text-gray-800">
+                <img src="/src/assets/logo_1.png" alt="Ethnic Boutique" style={{height:'100px '}} className="logo w-auto rounded-full" />
+              </span>
           </Link>
 
           {/* Desktop Menu */}

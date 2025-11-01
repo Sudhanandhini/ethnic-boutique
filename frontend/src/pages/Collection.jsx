@@ -565,10 +565,10 @@ const Collection = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20 bg-gray-50">
+    <div className="min-h-screen pt-20 ">
       {/* Hero Section - Image and Text Split */}
      
-      <section className="gradient-bg1">
+      <section className="gradient-bg2">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center min-h-[400px]">
             {/* Hero Content */}
@@ -747,7 +747,7 @@ const Collection = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 gradient-bg1 relative overflow-hidden">
+      <section className="py-32 gradient-bg2 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -762,7 +762,7 @@ const Collection = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-block bg-secondary/10 text-secondary px-10 py-4 rounded-full font-semibold hover:shadow-2xl transition-all transform hover:scale-105"
+              className="inline-block bg-black text-white px-10 py-4 rounded-full font-semibold hover:shadow-2xl transition-all transform hover:scale-105"
             >
               Start Custom Order
             </Link>
