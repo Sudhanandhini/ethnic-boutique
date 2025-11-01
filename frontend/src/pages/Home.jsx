@@ -94,7 +94,7 @@ const Home = () => {
         setToastType("success");
         setShowToast(true);
         setForm({ name: "", email: "", phone: "", subject: "", message: "" });
-        
+
         setTimeout(() => setShowToast(false), 5000);
       } else {
         setToastMessage(data.message || "Something went wrong. Please try again.");
@@ -201,39 +201,32 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden  pt-20 bg-img">
-        <div className="absolute top-0 right-0 ">
-          <img src="/src/assets/bg-pink.png" alt="Logo" className="w-100 h-100 bg-pink" />
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-img">
+        <div className="absolute top-0 right-0 hidden md:block">
+          <img src="/src/assets/bg-pink.png" alt="Logo" className="w-64 lg:w-96 h-auto opacity-50" />
         </div>
-        <div className="absolute top-0 left-0 ">
-          <img src="/src/assets/bg-blue.png" alt="Logo" className="w-100 h-100 bg-blue" />
+        <div className="absolute top-0 left-0 hidden md:block">
+          <img src="/src/assets/bg-blue.png" alt="Logo" className="w-64 lg:w-96 h-auto opacity-50" />
         </div>
-        
-{/* <div className="absolute top-0 right-0 w-96 h-96 gradient-blob rounded-full blur-lg"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 gradient-blob rounded-full blur-3xl"></div> */}
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 w-full">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8 text-center md:text-left"
             >
               <motion.p
                 variants={fadeInUp}
-                className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic max-w-md leading-relaxed"
-                style={{
-                  letterSpacing: "0.15em",
-                  textTransform: "capitalize",
-                }}
+                className="text-sm sm:text-base tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed"
               >
                 Luxury redefined.
               </motion.p>
 
               <motion.h1
                 variants={fadeInUp}
-                className="text-7xl md:text-7xl  font-bold text-gray-900 leading-relaxed"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight"
               >
                 Tradition<br />
                 Meets<br />
@@ -242,19 +235,10 @@ const Home = () => {
 
               <motion.p
                 variants={fadeInUp}
-                className="text-base text-gray-600 max-w-md leading-relaxed"
+                className="text-sm sm:text-base text-gray-600 max-w-md mx-auto md:mx-0 leading-relaxed"
               >
                 We are an ethnic design studio that creates a one-of-a-kind experience for your special occasion. Every piece tells a story of elegance and heritage, crafted with passion and precision.
               </motion.p>
-
-              <motion.div variants={fadeInUp}>
-                {/* <Link
-                  to="/gallery"
-                  className="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors"
-                >
-                  Shop Now
-                </Link> */}
-              </motion.div>
             </motion.div>
 
             <motion.div
@@ -263,7 +247,7 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="relative flex justify-center items-center"
             >
-              <div className="relative w-[650px] h-[600px]">
+              <div className="relative w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[650px] aspect-square">
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-secondary/10 to-accent/10 rounded-full blur-2xl opacity-70"></div>
 
                 <div className="relative rounded-full w-full h-full overflow-hidden shadow-2xl">
@@ -279,12 +263,12 @@ const Home = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.6 }}
-                className="absolute -top-10 -left-16 w-56 h-40 rounded-2xl overflow-hidden shadow-xl z-10"
+                className="absolute -top-5 -left-8 sm:-top-10 sm:-left-16 w-32 h-24 sm:w-56 sm:h-40 rounded-2xl overflow-hidden shadow-xl z-10"
               >
                 <img
                   src={blue}
                   alt="Bridal jewelry detail"
-                  className="w-[300px] h-[200px] object-cover"
+                  className="w-full h-full object-cover"
                 />
               </motion.div>
             </motion.div>
@@ -293,29 +277,25 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-35 gradient-bg1">
+      <section className="py-16 sm:py-24 lg:py-35 gradient-bg1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
             <motion.p
               variants={fadeInUp}
-              className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed"
-              style={{
-                letterSpacing: "0.15em",
-                textTransform: "capitalize",
-              }}
+              className="text-sm sm:text-base tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed mb-4"
             >
               Our range
             </motion.p>
 
             <motion.h2
               variants={fadeInUp}
-              className="text-5xl  font-extrabold text-gray-900 mb-4 leading-[1.3]"
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 leading-tight"
             >
               Explore Exquisite Bridal<br />Collections For Your Dream<br />Wedding
             </motion.h2>
@@ -326,20 +306,20 @@ const Home = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 py-10"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-10"
           >
             {features.map((feature, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow border border-gray-100 text-left"
+                className="bg-white p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow border border-gray-100 text-left"
               >
-                <div className="w-24 h-24 bg-[#cda89687] rounded-full flex items-center justify-center mb-4 text-gray-800 border-2 border-gray-200">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-[#cda89687] rounded-full flex items-center justify-center mb-4 text-gray-800 border-2 border-gray-200">
                   {feature.icon}
                 </div>
 
-                <h3 className="text-3xl  font-bold text-gray-900 mb-3 mt-5 py-5 pt-24">
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 mt-5 py-5">
                   {feature.title}
                 </h3>
 
@@ -353,7 +333,7 @@ const Home = () => {
       </section>
 
       {/* Latest Designs Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <motion.div
@@ -361,20 +341,16 @@ const Home = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="text-center mb-16"
+              className="text-center mb-12 sm:mb-16"
             >
               <motion.p
                 variants={fadeInUp}
-                className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed"
-                style={{
-                  letterSpacing: "0.15em",
-                  textTransform: "capitalize",
-                }}
+                className="text-sm sm:text-base tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed mb-4"
               >
                 Our Art
               </motion.p>
 
-              <h2 className="text-5xl  font-bold text-gray-900">Latest Designs</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">Latest Designs</h2>
             </motion.div>
           </div>
 
@@ -383,11 +359,12 @@ const Home = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-3 grid-rows-2 gap-4 mb-12"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12"
           >
+            {/* First row - 2 items on mobile, 3 on desktop */}
             <motion.div
               variants={fadeInUp}
-              className="rounded-3xl overflow-hidden h-72"
+              className="rounded-3xl overflow-hidden h-60 sm:h-72"
             >
               <img
                 src={blue}
@@ -398,9 +375,9 @@ const Home = () => {
 
             <motion.div
               variants={fadeInUp}
-              className="bg-[#f5e6e0] rounded-3xl p-8 flex flex-col justify-center h-72 hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#f5e6e0] rounded-3xl p-6 sm:p-8 flex flex-col justify-center h-60 sm:h-72 hover:shadow-xl transition-shadow duration-300"
             >
-              <h3 className="text-3xl  font-bold text-gray-900 mb-4">Silk Saree</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Silk Saree</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Crafted from the finest silk, this saree embodies timeless elegance and tradition. Perfect for your special day.
               </p>
@@ -408,8 +385,7 @@ const Home = () => {
 
             <motion.div
               variants={fadeInUp}
-              className="row-span-2 rounded-3xl overflow-hidden"
-              style={{ height: '590px' }}
+              className="rounded-3xl overflow-hidden h-60 sm:h-72 lg:row-span-2 lg:h-auto"
             >
               <img
                 src={pink}
@@ -418,11 +394,12 @@ const Home = () => {
               />
             </motion.div>
 
+            {/* Second row */}
             <motion.div
               variants={fadeInUp}
-              className="bg-black rounded-3xl p-8 flex flex-col justify-center h-72 hover:shadow-xl transition-shadow duration-300"
+              className="bg-black rounded-3xl p-6 sm:p-8 flex flex-col justify-center h-60 sm:h-72 hover:shadow-xl transition-shadow duration-300"
             >
-              <h3 className="text-3xl  font-bold text-white mb-4">Bridal Lehenga</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Bridal Lehenga</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
                 Adorned with intricate embroidery, this lehenga exudes opulence and grace. A dream come true for every bride.
               </p>
@@ -430,7 +407,7 @@ const Home = () => {
 
             <motion.div
               variants={fadeInUp}
-              className="rounded-3xl overflow-hidden h-72"
+              className="rounded-3xl overflow-hidden h-60 sm:h-72"
             >
               <img
                 src={black}
@@ -447,7 +424,7 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="flex justify-center"
           >
-            <button className="px-8 py-3 border-2 border-gray-900 rounded-full text-gray-900 font-medium hover:bg-gray-900 hover:text-white transition-colors">
+            <button className="px-6 sm:px-8 py-3 border-2 border-gray-900 rounded-full text-gray-900 font-medium hover:bg-gray-900 hover:text-white transition-colors">
               Read More
             </button>
           </motion.div>
@@ -455,24 +432,24 @@ const Home = () => {
       </section>
 
       {/* Ethnic Essence Section */}
-      <section className="py-24  from-secondary/10 via-white to-blue-50 relative overflow-hidden">
-        <div className="absolute right-0">
-          <img src='/src/assets/template-asset-01247b8c.png' className="w-full h-full object-contain" />
+      <section className="py-16 sm:py-24 relative overflow-hidden">
+        <div className="absolute right-0 hidden lg:block">
+          <img src='/src/assets/template-asset-01247b8c.png' className="w-64 h-auto opacity-30" />
         </div>
-        <div className="absolute ">
-          <img src='/src/assets/template-asset-cbc71046.png' className="bg-essence-img" />
+        <div className="absolute left-0 hidden lg:block">
+          <img src='/src/assets/template-asset-cbc71046.png' className="w-64 h-auto opacity-30" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="relative order-2 md:order-1"
             >
-              <div className="relative w-[600px] h-[600px] mx-auto">
+              <div className="relative w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] aspect-square mx-auto">
                 <div className="absolute inset-0 rounded-full overflow-hidden shadow-2xl">
                   <img
                     src={pink}
@@ -487,7 +464,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -top-8 right-8 w-48 h-32 rounded-2xl overflow-hidden shadow-xl z-20"
+                className="absolute -top-4 right-4 sm:-top-8 sm:right-8 w-32 h-24 sm:w-48 sm:h-32 rounded-2xl overflow-hidden shadow-xl z-20"
               >
                 <img
                   src={black}
@@ -501,7 +478,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="absolute -bottom-8 left-8 w-48 h-48 rounded-2xl overflow-hidden shadow-xl z-20"
+                className="absolute -bottom-4 left-4 sm:-bottom-8 sm:left-8 w-32 h-32 sm:w-48 sm:h-48 rounded-2xl overflow-hidden shadow-xl z-20"
               >
                 <img
                   src={blue}
@@ -516,32 +493,28 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-6 order-1 md:order-2 text-center md:text-left"
             >
               <motion.p
                 variants={fadeInUp}
-                className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic max-w-md leading-relaxed"
-                style={{
-                  letterSpacing: "0.15em",
-                  textTransform: "capitalize",
-                }}
+                className="text-sm sm:text-base tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed"
               >
                 Our Story
               </motion.p>
 
-              <h2 className="text-5xl md:text-6xl  font-bold text-gray-900 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
                 Ethnic Essence
               </h2>
 
-              <h3 className="text-2xl  font-semibold text-gray-800">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800">
                 Crafted with Passion
               </h3>
 
-              <p className="text-gray-600 leading-relaxed text-lg">
+              <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
                 At Ethnic Boutique, we believe in celebrating the rich heritage of Indian craftsmanship. Each design reflects our dedication to quality, elegance, and the timeless beauty of tradition.
               </p>
 
-              <button className="mt-6 px-8 py-3 border-2 border-gray-900 rounded-full text-gray-900 font-medium hover:bg-gray-900 hover:text-white transition-colors">
+              <button className="mt-6 px-6 sm:px-8 py-3 border-2 border-gray-900 rounded-full text-gray-900 font-medium hover:bg-gray-900 hover:text-white transition-colors">
                 Shop Now
               </button>
             </motion.div>
@@ -550,29 +523,25 @@ const Home = () => {
       </section>
 
       {/* How We Work Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
             <motion.p
               variants={fadeInUp}
-              className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic pb-4 leading-relaxed"
-              style={{
-                letterSpacing: "0.15em",
-                textTransform: "capitalize",
-              }}
+              className="text-sm sm:text-base tracking-[0.15em] text-[#b28b78] font-semibold italic pb-4 leading-relaxed"
             >
               Our Work
             </motion.p>
-            <h2 className="text-5xl  font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               How We Work
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
               Our simple and efficient process ensures you get the perfect outfit for your special occasion.
             </p>
           </motion.div>
@@ -587,7 +556,7 @@ const Home = () => {
             <img
               src={worker}
               alt="Our team at work"
-              className="w-full h-100 object-cover rounded-2xl shadow-xl top-top"
+              className="w-full h-60 sm:h-80 lg:h-96 object-cover rounded-2xl shadow-xl"
             />
           </motion.div>
 
@@ -596,7 +565,7 @@ const Home = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-8"
           >
             {[
               { step: "01", title: "Choose Your Style", desc: "Browse our collection and select your favorite design" },
@@ -608,13 +577,13 @@ const Home = () => {
                 variants={fadeInUp}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-[#f5e6e0] rounded-full flex items-center justify-center mx-auto mb-4 text-black text-2xl font-bold">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#f5e6e0] rounded-full flex items-center justify-center mx-auto mb-4 text-black text-xl sm:text-2xl font-bold">
                   {item.step}
                 </div>
-                <h3 className="text-xl  font-bold text-gray-900 mb-2">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-sm sm:text-base">
                   {item.desc}
                 </p>
               </motion.div>
@@ -624,35 +593,32 @@ const Home = () => {
       </section>
 
       {/* Aari Work Section */}
-      <section className="py-28">
+      <section className="py-16 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="order-2 md:order-1 text-center md:text-left"
             >
               <motion.p
                 variants={fadeInUp}
-                className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic pb-4 leading-relaxed"
-                style={{
-                  letterSpacing: "0.15em",
-                  textTransform: "capitalize",
-                }}
+                className="text-sm sm:text-base tracking-[0.15em] text-[#b28b78] font-semibold italic pb-4 leading-relaxed"
               >
                 Our Work
               </motion.p>
-              <h2 className="text-5xl  font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Aari Work
               </h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base">
                 Aari work is a traditional form of embroidery that originated in India. This intricate
                 craft involves creating beautiful patterns using a specialized hooked needle called an
                 'aari'. Our skilled artisans use this ancient technique to create stunning designs that
                 add elegance and sophistication to every garment.
               </p>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-gray-600 mb-8 leading-relaxed text-sm sm:text-base">
                 Each piece featuring aari work is a masterpiece, taking hours of meticulous craftsmanship
                 to complete. The delicate threadwork, often embellished with beads, sequins, and stones,
                 creates a rich texture and depth that makes our garments truly unique.
@@ -671,9 +637,9 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="relative order-1 md:order-2"
             >
-              <div className="relative w-[600px] h-[600px] mx-auto">
+              <div className="relative w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] aspect-square mx-auto">
                 <div className="absolute inset-0 rounded-full overflow-hidden shadow-2xl">
                   <img
                     src={pink}
@@ -688,7 +654,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -top-8 right-8 w-48 h-32 rounded-2xl overflow-hidden shadow-xl z-20"
+                className="absolute -top-4 right-4 sm:-top-8 sm:right-8 w-32 h-24 sm:w-48 sm:h-32 rounded-2xl overflow-hidden shadow-xl z-20"
               >
                 <img
                   src={black}
@@ -702,7 +668,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="absolute -bottom-8 left-8 w-48 h-48 rounded-2xl overflow-hidden shadow-xl z-20"
+                className="absolute -bottom-4 left-4 sm:-bottom-8 sm:left-8 w-32 h-32 sm:w-48 sm:h-48 rounded-2xl overflow-hidden shadow-xl z-20"
               >
                 <img
                   src={blue}
@@ -716,29 +682,25 @@ const Home = () => {
       </section>
 
       {/* Image Gallery Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
             <motion.p
               variants={fadeInUp}
-              className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic pb-4 leading-relaxed"
-              style={{
-                letterSpacing: "0.15em",
-                textTransform: "capitalize",
-              }}
+              className="text-sm sm:text-base tracking-[0.15em] text-[#b28b78] font-semibold italic pb-4 leading-relaxed"
             >
               Our Gallery
             </motion.p>
-            <h2 className="text-4xl  font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Image Gallery
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
               Explore our stunning collection of ethnic wear through these beautiful images.
             </p>
           </motion.div>
@@ -748,7 +710,7 @@ const Home = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-2 md:grid-cols-3 gap-4"
+            className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4"
           >
             {galleryImages.map((img, index) => (
               <motion.div
@@ -771,11 +733,11 @@ const Home = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mt-12"
+            className="text-center mt-8 sm:mt-12"
           >
             <Link
               to="/gallery"
-              className="inline-flex items-center gap-2 bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center gap-2 bg-black text-white px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors text-sm sm:text-base"
             >
               View All Gallery
               <ArrowRight className="w-5 h-5" />
@@ -784,31 +746,27 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CORRECTED Testimonials Section */}
-      <section className="py-24 ">
+      {/* Testimonials Section */}
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
             <motion.p
               variants={fadeInUp}
               className="text-sm tracking-[0.2em] text-[#b28b78] font-medium italic mb-3"
-              style={{
-                letterSpacing: "0.2em",
-                textTransform: "capitalize",
-              }}
             >
               Love Us
             </motion.p>
 
-            <h2 className="text-5xl md:text-6xl  font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
               Happy Customers Say
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto text-base leading-relaxed">
+            <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
               Discover why brides choose Ethnic Boutique. Read firsthand experiences and let their stories inspire your perfect bridal journey.
             </p>
           </motion.div>
@@ -823,14 +781,14 @@ const Home = () => {
               <motion.div
                 animate={{ x: `-${currentSlide * 100}%` }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className="flex p-4"
+                className="flex p-2 sm:p-4"
               >
                 {Array.from({ length: totalSlides }).map((_, slideIndex) => (
                   <div
                     key={slideIndex}
                     className="w-full flex-shrink-0"
                   >
-                    <div className="grid md:grid-cols-2 gap-8 px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 px-2 sm:px-4">
                       {testimonials.slice(slideIndex * 2, slideIndex * 2 + 2).map((testimonial, index) => (
                         <motion.div
                           key={index}
@@ -838,27 +796,25 @@ const Home = () => {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: index * 0.1 }}
-                          className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                          style={{ padding: '48px' }}
+                          className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6 sm:p-8 lg:p-12"
                         >
                           {/* Date */}
-                          <p className="text-sm text-gray-500 mb-8 font-medium">
+                          <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-8 font-medium">
                             {testimonial.date}
                           </p>
 
                           {/* Testimonial Text */}
-                          <p className="text-gray-900 text-3xl md:text-3xl  font-bold mb-10 leading-[1.4]">
+                          <p className="text-gray-900 text-lg sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-10 leading-tight">
                             {testimonial.text}
                           </p>
 
                           {/* User Info */}
                           <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-
                             <div>
-                              <p className="font-bold text-gray-900 text-lg">
+                              <p className="font-bold text-gray-900 text-base sm:text-lg">
                                 {testimonial.name}
                               </p>
-                              <p className="text-sm text-gray-600 font-medium">
+                              <p className="text-xs sm:text-sm text-gray-600 font-medium">
                                 {testimonial.location}
                               </p>
                             </div>
@@ -872,17 +828,17 @@ const Home = () => {
             </div>
 
             {/* Navigation Arrows */}
-            <div className="flex justify-center gap-4 mt-16">
+            <div className="flex justify-center gap-4 mt-12 sm:mt-16">
               <button
                 onClick={() => {
                   setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
                   setIsPaused(true);
                   setTimeout(() => setIsPaused(false), 5000);
                 }}
-                className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-50 transition-all border border-gray-200"
+                className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-50 transition-all border border-gray-200"
                 aria-label="Previous slide"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -892,17 +848,17 @@ const Home = () => {
                   setIsPaused(true);
                   setTimeout(() => setIsPaused(false), 5000);
                 }}
-                className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-50 transition-all border border-gray-200"
+                className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-50 transition-all border border-gray-200"
                 aria-label="Next slide"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             </div>
 
             {/* Progress Indicator Dots */}
-            <div className="flex justify-center gap-3 mt-8">
+            <div className="flex justify-center gap-3 mt-6 sm:mt-8">
               {Array.from({ length: totalSlides }).map((_, index) => (
                 <button
                   key={index}
@@ -912,8 +868,8 @@ const Home = () => {
                     setTimeout(() => setIsPaused(false), 5000);
                   }}
                   className={`transition-all duration-300 rounded-full ${currentSlide === index
-                    ? 'w-10 h-2.5 bg-gray-900'
-                    : 'w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400'
+                    ? 'w-8 sm:w-10 h-2 sm:h-2.5 bg-gray-900'
+                    : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-gray-300 hover:bg-gray-400'
                     }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -924,24 +880,24 @@ const Home = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute top-10 left-0 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-40"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-40"></div>
+      <section className="py-12 sm:py-20 relative overflow-hidden">
+        <div className="absolute top-10 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-pink-200 rounded-full blur-3xl opacity-40"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-blue-200 rounded-full blur-3xl opacity-40"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-3xl shadow-2xl p-8 md:p-12"
+              className="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-12 order-2 md:order-1"
             >
-              <h2 className="text-3xl  font-bold text-gray-900 mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
                 Get In Touch
               </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
                   <input
                     type="text"
@@ -949,10 +905,10 @@ const Home = () => {
                     value={form.name}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full bg-gray-100 border-0 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
+                    className="w-full bg-gray-100 border-0 rounded-full px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
                     placeholder="Your Name *"
                   />
-                  {errors.name && <p className="text-red-500 text-sm mt-2 ml-4">{errors.name}</p>}
+                  {errors.name && <p className="text-red-500 text-xs sm:text-sm mt-2 ml-4">{errors.name}</p>}
                 </div>
 
                 <div>
@@ -962,10 +918,10 @@ const Home = () => {
                     value={form.email}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full bg-gray-100 border-0 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
+                    className="w-full bg-gray-100 border-0 rounded-full px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
                     placeholder="Your Email *"
                   />
-                  {errors.email && <p className="text-red-500 text-sm mt-2 ml-4">{errors.email}</p>}
+                  {errors.email && <p className="text-red-500 text-xs sm:text-sm mt-2 ml-4">{errors.email}</p>}
                 </div>
 
                 <div>
@@ -975,7 +931,7 @@ const Home = () => {
                     value={form.phone}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full bg-gray-100 border-0 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
+                    className="w-full bg-gray-100 border-0 rounded-full px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
                     placeholder="Phone Number (Optional)"
                   />
                 </div>
@@ -987,7 +943,7 @@ const Home = () => {
                     value={form.subject}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full bg-gray-100 border-0 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
+                    className="w-full bg-gray-100 border-0 rounded-full px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 disabled:opacity-50"
                     placeholder="Subject (Optional)"
                   />
                 </div>
@@ -998,22 +954,22 @@ const Home = () => {
                     value={form.message}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    rows="2"
-                    className="w-full bg-gray-100 border-0 rounded-3xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 resize-none disabled:opacity-50"
+                    rows="3"
+                    className="w-full bg-gray-100 border-0 rounded-3xl px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-secondary placeholder-gray-500 resize-none disabled:opacity-50"
                     placeholder="Your Message *"
                   />
-                  {errors.message && <p className="text-red-500 text-sm mt-2 ml-4">{errors.message}</p>}
+                  {errors.message && <p className="text-red-500 text-xs sm:text-sm mt-2 ml-4">{errors.message}</p>}
                 </div>
 
-                <div className="flex justify-center pt-4">
+                <div className="flex justify-center pt-2 sm:pt-4">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-black text-white px-12 py-3 rounded-full hover:bg-gray-800 transition-all font-medium uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="bg-black text-white px-8 sm:px-12 py-3 rounded-full hover:bg-gray-800 transition-all font-medium uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 text-sm sm:text-base"
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                         Sending...
                       </>
                     ) : (
@@ -1029,52 +985,48 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-6 order-1 md:order-2 text-center md:text-left"
             >
               <motion.p
                 variants={fadeInUp}
-                className="text-[1.1rem] tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed"
-                style={{
-                  letterSpacing: "0.15em",
-                  textTransform: "capitalize",
-                }}
+                className="text-sm sm:text-base tracking-[0.15em] text-[#b28b78] font-semibold italic leading-relaxed"
               >
                 Get In Touch
               </motion.p>
 
-              <h2 className="text-5xl md:text-6xl  font-bold text-gray-900 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
                 Contact With Us
               </h2>
 
-              <p className="text-gray-600 leading-relaxed text-lg">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base lg:text-lg">
                 We'd love to hear from you! Reach out for inquiries, collaborations, or to schedule a consultation with our bridal experts.
               </p>
 
               <div className="space-y-4 pt-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black">
-                    <Phone className="w-5 h-5" />
+                <div className="flex items-center gap-4 justify-center md:justify-start">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black flex-shrink-0">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <p className="text-gray-900 font-light text-lg">+91 98869 87278</p>
+                    <p className="text-gray-900 font-light text-sm sm:text-base lg:text-lg">+91 98869 87278</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black">
-                    <MapPin className="w-5 h-5" />
+                <div className="flex items-center gap-4 justify-center md:justify-start">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black flex-shrink-0">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <p className="text-gray-900 font-light text-lg">#120, 14th Main, 29th Cross, Jayanagar, 4th Block, Bangalore, India</p>
+                    <p className="text-gray-900 font-light text-sm sm:text-base lg:text-lg">#120, 14th Main, 29th Cross, Jayanagar, 4th Block, Bangalore, India</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black">
-                    <Mail className="w-5 h-5" />
+                <div className="flex items-center gap-4 justify-center md:justify-start">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black flex-shrink-0">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <p className="text-gray-900 font-light text-lg">sandysethnic@gmail.com</p>
+                    <p className="text-gray-900 font-light text-sm sm:text-base lg:text-lg">sandysethnic@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -1089,21 +1041,21 @@ const Home = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className={`fixed bottom-8 right-8 ${toastType === 'success'
+            className={`fixed bottom-4 right-4 sm:bottom-8 sm:right-8 ${toastType === 'success'
                 ? 'bg-green-600'
                 : 'bg-red-600'
-              } text-white px-6 py-4 rounded-2xl shadow-2xl z-50 flex items-center gap-3`}
+              } text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl z-50 flex items-center gap-2 sm:gap-3 max-w-sm`}
           >
             {toastType === 'success' ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             )}
-            <span className="font-medium">{toastMessage}</span>
+            <span className="font-medium text-sm sm:text-base">{toastMessage}</span>
           </motion.div>
         )}
       </section>
