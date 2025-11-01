@@ -67,7 +67,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="gradient-bg py-20">
+      <section className="gradient-bg1 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -128,7 +128,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Map Section */}
-      <section className="py-20 gradient-bg">
+      <section className="py-20 gradient-bg1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -260,7 +260,15 @@ const Contact = () => {
 
                 {/* Map Placeholder */}
                 <div className="w-full h-96 rounded-2xl overflow-hidden shadow-xl">
-                  <iframe
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4678.5882765488805!2d77.58407037582907!3d12.9271944873841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15a30356ca5f%3A0x174f5f42bf81e953!2sEthnic%20Fashions!5e1!3m2!1sen!2sin!4v1761977940130!5m2!1sen!2sin" 
+                  width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"></iframe>
+                  
+                  {/* <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709656!3d19.082177513688024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
@@ -268,11 +276,11 @@ const Contact = () => {
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
+                  ></iframe> */}
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg">
+              {/* <div className="bg-white p-8 rounded-2xl shadow-lg">
                 <h3 className="text-xl font-serif font-bold text-gray-900 mb-4">
                   Book an Appointment
                 </h3>
@@ -286,7 +294,7 @@ const Contact = () => {
                 >
                   Call to Book
                 </a>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>

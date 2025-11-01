@@ -141,7 +141,7 @@ const HomeNavbar = () => {
                         key={index}
                         to={`/collection/${collection.toLowerCase().replace(/ /g, '-')}`}
                         onClick={() => setIsMenuOpen(false)}
-                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-pink-50 hover:text-pink-500 rounded-lg transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-secondary/10 hover:text-secondary rounded-lg transition-colors"
                       >
                         {collection}
                       </Link>
@@ -155,19 +155,19 @@ const HomeNavbar = () => {
                   <div className="flex space-x-4">
                     <a
                       href="#"
-                      className="w-10 h-10 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center text-white hover:shadow-lg transition-shadow"
+                      className="w-10 h-10 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black hover:shadow-lg transition-shadow"
                     >
                       <span className="text-sm">f</span>
                     </a>
                     <a
                       href="#"
-                      className="w-10 h-10 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center text-white hover:shadow-lg transition-shadow"
+                      className="w-10 h-10 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black hover:shadow-lg transition-shadow"
                     >
                       <span className="text-sm">in</span>
                     </a>
                     <a
                       href="#"
-                      className="w-10 h-10 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center text-white hover:shadow-lg transition-shadow"
+                      className="w-10 h-10 bg-[#f5e6e0] rounded-full flex items-center justify-center text-black hover:shadow-lg transition-shadow"
                     >
                       <span className="text-sm">tw</span>
                     </a>

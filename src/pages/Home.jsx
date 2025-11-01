@@ -833,11 +833,11 @@ const Home = () => {
 
                           {/* User Info */}
                           <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                            <img
+                            {/* <img
                               src={testimonial.image}
                               alt={testimonial.name}
                               className="w-16 h-16 rounded-full object-cover shadow-md"
-                            />
+                            /> */}
                             <div>
                               <p className="font-bold text-gray-900 text-lg">
                                 {testimonial.name}

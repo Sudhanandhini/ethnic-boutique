@@ -27,18 +27,18 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-serif font-bold mb-4">Ethnic Boutique</h3>
+            <h3 className="text-xl font-serif font-bold mb-4 text-secondary">Ethnic Boutique</h3>
             <p className="text-gray-400 text-sm mb-4">
               Where tradition meets modernity. We create exquisite ethnic wear that celebrates your unique style and heritage.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-secondary transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-secondary transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-secondary transition-colors">
                 <Twitter size={20} />
               </a>
             </div>
@@ -51,13 +51,13 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h3 className="text-lg font-serif font-bold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-serif font-bold mb-4 text-secondary">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-pink-400 transition-colors text-sm"
+                    className="text-gray-400 hover:text-secondary transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -73,13 +73,13 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-lg font-serif font-bold mb-4">Collections</h3>
+            <h3 className="text-lg font-serif font-bold mb-4 text-secondary">Collections</h3>
             <ul className="space-y-2">
               {collections.map((collection) => (
                 <li key={collection.name}>
                   <Link
                     to={collection.path}
-                    className="text-gray-400 hover:text-pink-400 transition-colors text-sm"
+                    className="text-gray-400 hover:text-secondary transition-colors text-sm"
                   >
                     {collection.name}
                   </Link>
@@ -95,17 +95,17 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <h3 className="text-lg font-serif font-bold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-serif font-bold mb-4 text-secondary">Contact Us</h3>
             <ul className="space-y-3">
-              <li className="flex items-start space-x-3 text-sm text-gray-400">
+              <li className="flex items-start space-x-3 text-sm text-gray-400 hover:text-secondary">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
                 <span>#120, 14th Main, 29th Cross, Jayanagar, 4th Block, Bangalore, India</span>
               </li>
-              <li className="flex items-center space-x-3 text-sm text-gray-400">
+              <li className="flex items-center space-x-3 text-sm text-gray-400 hover:text-secondary">
                 <Phone size={18} className="flex-shrink-0" />
                 <span>+91 98869 87278</span>
               </li>
-              <li className="flex items-center space-x-3 text-sm text-gray-400">
+              <li className="flex items-center space-x-3 text-sm text-gray-400 hover:text-secondary">
                 <Mail size={18} className="flex-shrink-0" />
                 <span>sandysethnic@gmail.com</span>
               </li>
@@ -119,7 +119,7 @@ const Footer = () => {
             © 2025 Ethnic Boutique. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="https://www.sunsys.in/" className="text-gray-400 hover:text-pink-400 text-sm transition-colors">
+            <a href="https://www.sunsys.in/" className="text-gray-400 hover:text-secondary text-sm transition-colors">
               Developed by Sunsys Technologies Pvt Ltd
             </a>
             

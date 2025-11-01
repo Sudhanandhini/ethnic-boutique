@@ -63,7 +63,7 @@ const Navbar = () => {
             <Link
               to="/about"
               className={`text-sm font-medium transition-colors ${
-                isActive('/about') ? 'text-pink-500' : 'text-gray-700 hover:text-pink-500'
+                isActive('/about') ? 'text-secondary' : 'text-gray-700 hover:text-secondary'
               }`}
             >
               About
@@ -104,7 +104,7 @@ const Navbar = () => {
             <Link
               to="/gallery"
               className={`text-sm font-medium transition-colors ${
-                isActive('/gallery') ? 'text-pink-500' : 'text-gray-700 hover:text-pink-500'
+                isActive('/gallery') ? 'text-secondary' : 'text-gray-700 hover:text-secondary'
               }`}
             >
               Gallery
@@ -112,7 +112,7 @@ const Navbar = () => {
             <Link
               to="/contact"
               className={`text-sm font-medium transition-colors ${
-                isActive('/contact') ? 'text-pink-500' : 'text-gray-700 hover:text-pink-500'
+                isActive('/contact') ? 'text-secondary' : 'text-gray-700 hover:text-secondary'
               }`}
             >
               Contact
@@ -144,14 +144,14 @@ const Navbar = () => {
               <div className="px-2 pt-2 pb-3 space-y-1">
                 <Link
                   to="/"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-pink-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-secondary rounded-md"
                   onClick={() => setIsOpen(false)}
                 >
                   Home
                 </Link>
                 <Link
                   to="/about"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-pink-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-secondary rounded-md"
                   onClick={() => setIsOpen(false)}
                 >
                   About
@@ -173,14 +173,14 @@ const Navbar = () => {
 
                 <Link
                   to="/gallery"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-pink-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-secondary rounded-md"
                   onClick={() => setIsOpen(false)}
                 >
                   Gallery
                 </Link>
                 <Link
                   to="/contact"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-pink-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black hover:bg-secondary rounded-md"
                   onClick={() => setIsOpen(false)}
                 >
                   Contact
