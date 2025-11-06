@@ -172,8 +172,8 @@ const Contact = () => {
               {/* Status Message */}
               {status.message && (
                 <div className={`mb-6 p-4 rounded-lg ${status.type === 'success'
-                    ? 'bg-green-50 text-green-800 border border-green-200'
-                    : 'bg-red-50 text-red-800 border border-red-200'
+                  ? 'bg-green-50 text-green-800 border border-green-200'
+                  : 'bg-red-50 text-red-800 border border-red-200'
                   }`}>
                   {status.message}
                 </div>
@@ -305,11 +305,12 @@ const Contact = () => {
                 {/* Map */}
                 <div className="w-full h-96 rounded-2xl overflow-hidden shadow-xl">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4678.5882765488805!2d77.58407037582907!3d12.9271944873841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15a30356ca5f%3A0x174f5f42bf81e953!2sEthnic%20Fashions!5e1!3m2!1sen!2sin!4v1761977940130!5m2!1sen!2sin"
+                    title="Boutique Location"
+                    src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1762430226003!5m2!1sen!2sin!6m8!1m7!1sQ6B4RBWGGIppOGmgY86RAQ!2m2!1d12.92899173014674!2d77.58751716256474!3f296.20063145064535!4f2.5174738788845445!5f0.7820865974627469"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
-                    allowFullScreen=""
+                    allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
