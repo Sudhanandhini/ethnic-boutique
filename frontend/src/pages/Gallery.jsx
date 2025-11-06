@@ -9,6 +9,42 @@ import blo from '../assets/81.jpg'
 import blo1 from '../assets/blck.jpg'
 import blo3 from '../assets/7.webp'
 import blo2 from '../assets/5.jpg'
+import iw1 from '../assets/iw1.png';
+import iw2 from '../assets/iw2.png';
+import iw3 from '../assets/iw3.png';
+import iw4 from '../assets/iw4.png';
+
+import k1 from '../assets/k1.png';
+import k2 from '../assets/k2.png';
+import k3 from '../assets/k3.png';
+import k4 from '../assets/k4.png';
+
+
+import p1 from '../assets/p1.png';
+import p2 from '../assets/p2.png';
+import p4 from '../assets/p4.png';
+
+
+import s1 from '../assets/s1.jpg';
+import s4 from '../assets/s2.webp';
+import s3 from '../assets/s3.jpg';
+import s2 from '../assets/s4.webp';
+
+import i1 from '../assets/i1.jpg';
+import i4 from '../assets/i4.jpg';
+import i31 from '../assets/i31.jpg';
+import i2 from '../assets/oip2.jpeg';
+
+import l1 from "../assets/l1.jpg";
+import l2 from "../assets/l2.jpg";
+import l3 from "../assets/l3.jpg";
+import l4 from "../assets/l4.png";
+
+import d1 from "../assets/d1.jpg";
+import d2 from "../assets/d2.png";
+import d3 from "../assets/d31.png";
+import d4 from "../assets/d4.png";
+
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -26,23 +62,24 @@ const Gallery = () => {
 
   const images = [
     { id: 1, category: 'bridal', url: blue, title: 'Bridal Collection 1' },
-    { id: 2, category: 'saree', url: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop', title: 'Silk Saree' },
-    { id: 3, category: 'lehenga', url: pink, title: 'Designer Lehenga' },
+    { id: 2, category: 'saree', url: d2, title: 'Silk Saree' },
+    { id: 3, category: 'lehenga', url: l1, title: 'Designer Lehenga' },
     { id: 4, category: 'bridal', url: blo1, title: 'Bridal Lehenga' },
     { id: 5, category: 'blouse', url: blo3, title: 'Designer Blouse' },
-    { id: 6, category: 'saree', url: royal, title: 'Traditional Saree' },
-    { id: 7, category: 'lehenga', url: blo, title: 'Festive Lehenga' },
-    { id: 8, category: 'salwar', url: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop', title: 'Anarkali Suit' },
-    { id: 9, category: 'bridal', url: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=800&auto=format&fit=crop', title: 'Bridal Set' },
-    { id: 10, category: 'kids', url: 'https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=800&auto=format&fit=crop', title: 'Kids Lehenga' },
-    { id: 11, category: 'saree', url: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&auto=format&fit=crop', title: 'Cotton Saree' },
+    { id: 6, category: 'saree', url: d1, title: 'Traditional Saree' },
+    { id: 7, category: 'lehenga', url: l2, title: 'Festive Lehenga' },
+    { id: 8, category: 'salwar', url: s3, title: 'Anarkali Suit' },
+    { id: 9, category: 'bridal', url: i1, title: 'Bridal Set' },
+    { id: 10, category: 'kids', url: k4, title: 'Kids Lehenga' },
+    { id: 11, category: 'saree', url: d4, title: 'Cotton Saree' },
     { id: 12, category: 'blouse', url: blo2, title: 'Embroidered Blouse' },
-    { id: 13, category: 'lehenga', url: black, title: 'Party Lehenga' },
-    { id: 14, category: 'salwar', url: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop', title: 'Punjabi Suit' },
-    { id: 15, category: 'kids', url: 'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&auto=format&fit=crop', title: 'Kids Ethnic Wear' },
+    { id: 13, category: 'lehenga', url: l3, title: 'Party Lehenga' },
+    { id: 14, category: 'salwar', url: s1, title: 'Punjabi Suit' },
+    { id: 15, category: 'kids', url: k1, title: 'Kids Ethnic Wear' },
     { id: 16, category: 'bridal', url: pink, title: 'Wedding Collection' },
-    { id: 17, category: 'saree', url: royal, title: 'Designer Saree' },
-    { id: 18, category: 'lehenga', url: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=800&auto=format&fit=crop', title: 'Bridal Lehenga Choli' }
+    { id: 17, category: 'saree', url: d3, title: 'Designer Saree' },
+    { id: 18, category: 'lehenga', url: l4, title: 'Bridal Lehenga Choli' },
+    { id: 19, category: 'kids', url: k3, title: 'Kids Ethnic Wear' },
   ]
 
   const filteredImages = activeFilter === 'all' 
@@ -52,7 +89,7 @@ const Gallery = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="gradient-bg1 py-20">
+      <section className=" py-20" style={{ backgroundImage: "linear-gradient(175deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 25%, rgb(253, 228, 219) 65%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -7,6 +7,42 @@ import gallery3 from '../assets/blck.jpg';
 import gallery4 from '../assets/pink.jpg';
 import gallery5 from '../assets/royal.jpg';
 import gallery6 from '../assets/2_blue.jpg';
+import iw1 from '../assets/iw1.png';
+import iw2 from '../assets/iw2.png';
+import iw3 from '../assets/iw3.png';
+import iw4 from '../assets/iw4.png';
+
+import k1 from '../assets/k1.png';
+import k2 from '../assets/k2.png';
+import k3 from '../assets/k3.png';
+import k4 from '../assets/k4.png';
+
+
+import p1 from '../assets/p1.png';
+import p2 from '../assets/p2.png';
+import p4 from '../assets/p4.png';
+
+
+import s1 from '../assets/s1.jpg';
+import s4 from '../assets/s2.webp';
+import s3 from '../assets/s3.jpg';
+import s2 from '../assets/s4.webp';
+
+import i1 from '../assets/i1.jpg';
+import i4 from '../assets/i4.jpg';
+import i31 from '../assets/i31.jpg';
+import i2 from '../assets/oip2.jpeg';
+
+import l1 from "../assets/l1.jpg";
+import l2 from "../assets/l2.jpg";
+import l3 from "../assets/l3.jpg";
+import l4 from "../assets/l4.png";
+
+import d1 from "../assets/d1.jpg";
+import d2 from "../assets/d2.png";
+import d3 from "../assets/d31.png";
+import d4 from "../assets/d4.png";
+
 
 
 const Collection = () => {
@@ -30,7 +66,7 @@ const Collection = () => {
           availability: 'Made to order with 2-3 weeks delivery time',
           customization: 'Available in custom sizes and color variations',
           features: ['Premium Georgette Fabric', 'Hand Embroidered Details', 'Custom Fit Available', 'Floor Length Design', 'Silk Inner Lining'],
-          image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop'
+          image: iw1
         },
         {
           id: 2,
@@ -44,7 +80,7 @@ const Collection = () => {
           availability: 'Ready to ship within 5-7 business days',
           customization: 'Length and sleeve modifications available',
           features: ['Breathable Cotton Fabric', 'Traditional Block Prints', 'A-Line Silhouette', 'Mirror Work Details', 'Easy Care Material'],
-          image: gallery1
+          image: iw2
         },
         {
           id: 3,
@@ -58,7 +94,7 @@ const Collection = () => {
           availability: 'Limited edition - 3-4 weeks for made-to-order',
           customization: 'Available in petite, regular, and tall lengths',
           features: ['Premium Crepe Fabric', 'Sequin Embellishments', 'Contemporary Cut', 'Side Zip Closure', 'Comfortable Fit'],
-          image: gallery2
+          image: iw3
         },
         {
           id: 4,
@@ -72,7 +108,7 @@ const Collection = () => {
           availability: 'Ready stock with immediate shipping',
           customization: 'Blazer and trouser alterations available',
           features: ['Linen Blend Fabric', 'Wrinkle-Resistant', 'Professional Tailoring', 'Minimal Embroidery', 'Structured Fit'],
-          image: gallery3
+          image: iw4
         }
       ]
     },
@@ -94,7 +130,7 @@ const Collection = () => {
           availability: 'Made to order with 3-4 weeks delivery',
           customization: 'Available in all sizes with color customization',
           features: ['Designer Jacket', 'Embroidered Lehenga', 'Matching Dupatta'],
-          image: gallery5
+          image: i1
         },
         {
           id: 2,
@@ -109,7 +145,7 @@ const Collection = () => {
           availability: 'Ready to ship in 2-3 weeks',
           customization: 'Cape length and sleeve style can be customized',
           features: ['Flowing Cape', 'Premium Fabric', 'Elegant Design'],
-          image: gallery6
+          image: i2
         },
         {
           id: 3,
@@ -124,7 +160,7 @@ const Collection = () => {
           availability: 'Ready stock available with immediate shipping',
           customization: 'Size adjustments and color options available',
           features: ['Comfortable Fit', 'Unique Style', 'Easy to Wear'],
-          image: gallery3
+          image: i31
         },
         {
           id: 4,
@@ -139,7 +175,7 @@ const Collection = () => {
           availability: 'Pre-stitched and ready to wear, ships in 7-10 days',
           customization: 'Blouse customization available',
           features: ['Pre-draped', 'Contemporary Style', 'Party Ready'],
-          image: gallery4
+          image: i4
         }
       ]
     },
@@ -228,7 +264,7 @@ const Collection = () => {
           availability: 'Ready stock available, ships in 3-5 days',
           customization: 'Size and length adjustments available',
           features: ['Flowing Design', 'Festive Wear', 'Comfortable Fit'],
-          image: gallery1
+          image: s1
         },
         {
           id: 2,
@@ -243,7 +279,7 @@ const Collection = () => {
           availability: 'Ready to ship immediately',
           customization: 'Available in multiple color options',
           features: ['Traditional Style', 'Vibrant Colors', 'Quality Fabric'],
-          image: gallery2
+          image: s2
         },
         {
           id: 3,
@@ -258,7 +294,7 @@ const Collection = () => {
           availability: 'Ready stock with same-day dispatch',
           customization: 'Palazzo width and length customizable',
           features: ['Trendy Design', 'Palazzo Pants', 'Modern Look'],
-          image: gallery6
+          image: s3
         },
         {
           id: 4,
@@ -273,7 +309,7 @@ const Collection = () => {
           availability: 'Available in stock, ships in 2-4 days',
           customization: 'Size and dupatta style options available',
           features: ['Versatile', 'Elegant Design', 'Easy to Wear'],
-          image: gallery4
+          image: s4
         }
       ]
     },
@@ -295,7 +331,7 @@ const Collection = () => {
           availability: 'Ready stock in standard kids sizes',
           customization: 'Size adjustments and color options available',
           features: ['Comfortable', 'Festive Wear', 'Kids Friendly'],
-          image: 'https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=600&auto=format&fit=crop'
+          image: k1
         },
         {
           id: 2,
@@ -310,7 +346,7 @@ const Collection = () => {
           availability: 'Available in multiple sizes, ships in 2-3 days',
           customization: 'Pajama or churidar bottom options',
           features: ['Traditional', 'Soft Fabric', 'Easy Wear'],
-          image: 'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=600&auto=format&fit=crop'
+          image: k2
         },
         {
           id: 3,
@@ -325,7 +361,7 @@ const Collection = () => {
           availability: 'Made to order in 2-3 weeks',
           customization: 'Length and size fully customizable',
           features: ['Playful Design', 'Party Wear', 'Comfortable'],
-          image: gallery1
+          image: k3
         },
         {
           id: 4,
@@ -340,7 +376,7 @@ const Collection = () => {
           availability: 'Ready stock available in standard sizes',
           customization: 'Custom sizes available on request',
           features: ['Traditional', 'Festive', 'Quality Fabric'],
-          image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop'
+          image: k4
         }
       ]
     },
@@ -362,7 +398,7 @@ const Collection = () => {
           availability: 'Fully customized, 8-10 weeks crafting time',
           customization: 'Complete customization of design, embroidery, and colors',
           features: ['Heavy Embroidery', 'Luxury Fabric', 'Bridal Collection'],
-          image: gallery4
+          image: l1
         },
         {
           id: 2,
@@ -377,7 +413,7 @@ const Collection = () => {
           availability: 'Semi-custom, ready in 4-5 weeks',
           customization: 'Color and blouse design customizable',
           features: ['Contemporary', 'Party Wear', 'Stunning Design'],
-          image: gallery5
+          image: l2
         },
         {
           id: 3,
@@ -392,7 +428,7 @@ const Collection = () => {
           availability: 'Ready to ship in 3-4 weeks',
           customization: 'Size and minor design changes available',
           features: ['Traditional Work', 'Festive', 'Rich Colors'],
-          image: gallery6
+          image: l3
         },
         {
           id: 4,
@@ -407,7 +443,7 @@ const Collection = () => {
           availability: 'Limited edition, 6-7 weeks delivery',
           customization: 'Complete design customization possible',
           features: ['Designer Piece', 'Unique Pattern', 'Modern'],
-          image: gallery1
+          image: l4
         }
       ]
     },
@@ -429,7 +465,7 @@ const Collection = () => {
           availability: 'Ready stock in standard sizes',
           customization: 'Border style and color options available',
           features: ['Pure Silk', 'Zari Border', 'Traditional'],
-          image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop'
+          image: p1
         },
         {
           id: 2,
@@ -444,7 +480,7 @@ const Collection = () => {
           availability: 'Made to order in 3-4 weeks',
           customization: 'Fully customizable designs and colors',
           features: ['Designer', 'Contemporary', 'Elegant'],
-          image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop'
+          image: p2
         },
         {
           id: 3,
@@ -459,7 +495,7 @@ const Collection = () => {
           availability: 'Available in stock, ships in 2-3 days',
           customization: 'Size adjustments available',
           features: ['Rich Colors', 'Festive', 'Quality Silk'],
-          image: gallery5
+          image: k4
         },
         {
           id: 4,
@@ -474,7 +510,7 @@ const Collection = () => {
           availability: 'Ready stock available',
           customization: 'Standard size alterations possible',
           features: ['Traditional', 'Timeless', 'Classic Design'],
-          image: gallery6
+          image: p4
         }
       ]
     },
@@ -496,7 +532,7 @@ const Collection = () => {
           availability: 'Ready to ship in 7-10 days',
           customization: 'Blouse size and minor adjustments available',
           features: ['Pre-stitched', 'Contemporary', 'Easy to Wear'],
-          image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop'
+          image: d1
         },
         {
           id: 2,
@@ -511,7 +547,7 @@ const Collection = () => {
           availability: 'Pre-stitched and ready, ships immediately',
           customization: 'Blouse customization available',
           features: ['Ruffle Design', 'Trendy', 'Pre-pleated'],
-          image: gallery1
+          image: d2
         },
         {
           id: 3,
@@ -526,7 +562,7 @@ const Collection = () => {
           availability: 'Ready stock, immediate shipping',
           customization: 'Blouse neck and sleeve style options',
           features: ['Glamorous', 'Party Ready', 'Embellished'],
-          image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop'
+          image: d3
         },
         {
           id: 4,
@@ -541,7 +577,7 @@ const Collection = () => {
           availability: 'Available in multiple colors, ships in 5-7 days',
           customization: 'Blouse and draping style variations available',
           features: ['Fusion Style', 'Modern', 'Versatile'],
-          image: gallery4
+          image: d4
         }
       ]
     }

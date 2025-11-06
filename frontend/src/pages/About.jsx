@@ -80,7 +80,7 @@ const About = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="gradient-bg1 py-16 sm:py-20">
+      <section className="py-16 sm:py-20" style={{ backgroundImage: "linear-gradient(175deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 25%, rgb(253, 228, 219) 65%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="text-center">
             <motion.h1

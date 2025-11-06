@@ -286,7 +286,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 sm:py-24 lg:py-35 gradient-bg1">
+      <section className="py-16 sm:py-24 lg:py-35 " style={{ backgroundImage: "linear-gradient(175deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 25%, rgb(253, 228, 219) 65%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -399,7 +399,8 @@ const Home = () => {
               <img
                 src={pink}
                 alt="Woman in blue gown"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                className="w-full h-[600px] object-cover hover:scale-110 transition-transform duration-500"
+                
               />
             </motion.div>
 
