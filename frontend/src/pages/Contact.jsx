@@ -65,8 +65,8 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+91 98869 87278"],
-      link: "tel:+919886987278"
+      details: ["+91 98869 87278", "+91 99161 32217"],
+      links: ["tel:+919886987278", "tel:+919916132217"]
     },
     {
       icon: <Mail className="w-6 h-6" />,
@@ -131,7 +131,13 @@ const Contact = () => {
                   {info.title}
                 </h3>
                 {info.details.map((detail, idx) => {
-                  if (info.link && idx === 0) {
+                  if (info.links) {
+                    return (
+                      <a key={idx} href={info.links[idx]} className="block text-gray-600 text-sm hover:text-secondary transition-colors">
+                        {detail}
+                      </a>
+                    )
+                  } else if (info.link && idx === 0) {
                     return (
                       <a key={idx} href={info.link} className="block text-gray-600 text-sm hover:text-secondary transition-colors">
                         {detail}
@@ -145,6 +151,7 @@ const Contact = () => {
                     )
                   }
                 })}
+
               </motion.div>
             ))}
           </div>

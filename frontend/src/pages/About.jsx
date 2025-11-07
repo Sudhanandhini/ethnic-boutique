@@ -6,8 +6,9 @@ import { Award, Heart, Users, Sparkles, CheckCircle } from 'lucide-react'
 import testimonial1 from '../assets/1.jpg'
 import testimonial2 from '../assets/2.jpg'
 import testimonial3 from '../assets/3.jpg'
-import pink from '../assets/pink.jpg'
+import pi from '../assets/p2.png'
 import blue from '../assets/royal.jpg'
+import a7 from '../assets/a7.png';
 
 const About = () => {
   const fadeInFromLeft = {
@@ -51,7 +52,7 @@ const About = () => {
   ]
 
   const features = [
-    'Expert craftsmanship with 10+ years of experience',
+    'Expert craftsmanship with 16+ years of experience',
     'Customization available for all designs',
     'Premium quality fabrics and materials',
     'Timely delivery guaranteed',
@@ -113,12 +114,12 @@ const About = () => {
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-6">Our Story</h2>
               <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
                 Ethnic Boutique was born from a deep love for traditional Indian textiles and a vision to make exquisite
-                ethnic wear accessible to every woman. Founded in 2014, we started as a small studio with just three
+                ethnic wear accessible to every woman. Founded in 2009, we started as a small studio with just three
                 artisans and a dream to preserve and celebrate India's rich textile heritage.
               </p>
               <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
-                Over the years, we've grown into a trusted name in ethnic fashion, serving hundreds of happy customers
-                across Bengaluru. Our journey has been marked by countless milestones, from dressing brides for their
+                Over the years, we've grown into a trusted name in ethnic fashion, serving thousands of happy customers
+                across India and Abroad. Our journey has been marked by countless milestones, from dressing brides for their
                 special day to creating everyday ethnic wear that empowers women to embrace their cultural roots.
               </p>
               <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
@@ -139,7 +140,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-secondary/10 to-accent/10 rounded-full blur-2xl opacity-70" />
 
                 <div className="relative rounded-full w-full h-full overflow-hidden shadow-2xl">
-                  <img src={pink} alt="Bride" className="w-full h-full object-cover" />
+                  <img src={pi} alt="Bride" className="w-full h-full object-cover" />
                 </div>
 
                 {/* Top Left Small Image */}
@@ -162,7 +163,7 @@ const About = () => {
                   className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 md:-bottom-6 md:-right-6 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center text-white shadow-xl"
                 >
                   <div className="text-center">
-                    <p className="text-xl sm:text-2xl md:text-3xl font-bold">10+</p>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-bold">16+</p>
                     <p className="text-xs sm:text-sm">Years</p>
                   </div>
                 </motion.div>
@@ -228,7 +229,7 @@ const About = () => {
               className="order-2 md:order-1"
             >
               <img
-                src={pink}
+                src={a7}
                 alt="Why choose us"
                 className="rounded-2xl shadow-xl w-full max-w-[600px] h-auto aspect-square object-cover mx-auto"
               />

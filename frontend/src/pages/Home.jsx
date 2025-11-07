@@ -19,6 +19,18 @@ import gallery4 from '../assets/pink.jpg';
 import gallery5 from '../assets/royal.jpg';
 import gallery6 from '../assets/2_blue.jpg';
 
+import a1 from '../assets/a1.png';
+import a2 from '../assets/a2.png';    
+import a3 from '../assets/a3.png';
+import a4 from '../assets/a4.png';
+import a5 from '../assets/a5.png';
+import a6 from '../assets/a6.png';
+import a7 from '../assets/a7.png';
+import a8 from '../assets/a8.png';
+import a9 from '../assets/a9.png';
+import a10 from '../assets/a10.png';
+import a11 from '../assets/a11.png';
+
 const galleryImages = [
   gallery1,
   gallery2,
@@ -376,7 +388,7 @@ const Home = () => {
               className="rounded-3xl overflow-hidden h-60 sm:h-72"
             >
               <img
-                src={blue}
+                src={a6}
                 alt="Bride in red saree"
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
               />
@@ -397,7 +409,7 @@ const Home = () => {
               className="rounded-3xl overflow-hidden h-60 sm:h-72 lg:row-span-2 lg:h-auto"
             >
               <img
-                src={pink}
+                src={a5}
                 alt="Woman in blue gown"
                 className="w-full h-[600px] object-cover hover:scale-110 transition-transform duration-500"
                 
@@ -420,7 +432,7 @@ const Home = () => {
               className="rounded-3xl overflow-hidden h-60 sm:h-72"
             >
               <img
-                src={black}
+                src={a2}
                 alt="Bride with flowers"
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
               />
@@ -462,7 +474,7 @@ const Home = () => {
               <div className="relative w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] aspect-square mx-auto">
                 <div className="absolute inset-0 rounded-full overflow-hidden shadow-2xl">
                   <img
-                    src={pink}
+                    src={a3}
                     alt="Craftsperson at work"
                     className="w-full h-full object-cover"
                   />
@@ -477,7 +489,7 @@ const Home = () => {
                 className="absolute -top-4 right-4 sm:-top-8 sm:right-8 w-32 h-24 sm:w-48 sm:h-32 rounded-2xl overflow-hidden shadow-xl z-20"
               >
                 <img
-                  src={black}
+                  src={a4}
                   alt="Design sketch"
                   className="w-full h-full object-cover"
                 />
@@ -491,7 +503,7 @@ const Home = () => {
                 className="absolute -bottom-4 left-4 sm:-bottom-8 sm:left-8 w-32 h-32 sm:w-48 sm:h-48 rounded-2xl overflow-hidden shadow-xl z-20"
               >
                 <img
-                  src={blue}
+                  src={a9}
                   alt="Embroidery pattern"
                   className="w-full h-full object-cover"
                 />
@@ -652,7 +664,7 @@ const Home = () => {
               <div className="relative w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] aspect-square mx-auto">
                 <div className="absolute inset-0 rounded-full overflow-hidden shadow-2xl">
                   <img
-                    src={pink}
+                    src={a8}
                     alt="Craftsperson at work"
                     className="w-full h-full object-cover"
                   />
@@ -667,7 +679,7 @@ const Home = () => {
                 className="absolute -top-4 right-4 sm:-top-8 sm:right-8 w-32 h-24 sm:w-48 sm:h-32 rounded-2xl overflow-hidden shadow-xl z-20"
               >
                 <img
-                  src={black}
+                  src={a1}
                   alt="Design sketch"
                   className="w-full h-full object-cover"
                 />
@@ -681,7 +693,7 @@ const Home = () => {
                 className="absolute -bottom-4 left-4 sm:-bottom-8 sm:left-8 w-32 h-32 sm:w-48 sm:h-48 rounded-2xl overflow-hidden shadow-xl z-20"
               >
                 <img
-                  src={blue}
+                  src={a10}
                   alt="Embroidery pattern"
                   className="w-full h-full object-cover"
                 />
